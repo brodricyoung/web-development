@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    width: 500px;
+    background-color: lightblue;
+    padding: 100px;
+    border: 50px solid black;
+    margin: 200px;
+}

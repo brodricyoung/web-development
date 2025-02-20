@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EQ1 Ministering</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script>
+        let headerMatch = null;
+        let rowMatch = null;
+
+        function searchContent() {
+            // Clear previous highlights
+            let allHeaders = document.querySelectorAll("th");
+            allHeaders.forEach(th => th.classList.remove("highlight-header"));
+            
+            let allRows = document.querySelectorAll("td");
+            allRows.forEach(td => td.classList.remove("highlight-row"));
+
+            // Get the input value and convert to lowercase
+            let input = document.getElementById("search-bar").value.toLowerCase();
+            let headers = document.querySelectorAll("th");
+            let rows = document.querySelectorAll("td");
+
+            let matchedHeader = false;
+            let matchedRow = false;
+
+            // Loop through each <th> and search for the input text
+            for (let i = 0; i < headers.length; i++) {
+                let header = headers[i];
+                if (header.textContent.toLowerCase().includes(input)) {
+                    // Highlight the matching header
+                    header.classList.add("highlight-header");
+                    matchedHeader = true;
+                    headerMatch = header; // Store the header match
+                    // break;  // Stop after the first match is found
+                }
+            }
+
+            // Loop through each <tr> and search for the input text
+            for (let i = 0; i < rows.length; i++) {
+                let row = rows[i];
+                if (row.textContent.toLowerCase().includes(input)) {
+                    // Highlight the matching row
+                    row.classList.add("highlight-row");
+                    matchedRow = true;
+                    rowMatch = row; // Store the row match
+                    // break;  // Stop after the first match is found
+                }
+            }
+
+            // If both locations are found, provide scroll buttons
+            if (matchedHeader && matchedRow) {
+                document.getElementById("scroll-to-companionship").style.display = "inline-block";
+                document.getElementById("scroll-to-ministers").style.display = "inline-block";
+            }
+        }
+
+        function scrollToHeader() {
+            if (headerMatch) {
+                headerMatch.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        }
+
+        function scrollToRow() {
+            if (rowMatch) {
+                rowMatch.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        }
+
+    </script>
+
+    <header>
+        <h1>69th Ward</h1>
+        <h1>Ministering</h1>
+        <h1>- EQ1 -</h1>
+    </header>
+
+    <div id="search">
+        <input type="text" id="search-bar" placeholder="Search your name...">
+        <input type="button" id="search-button" value="Search" onclick="searchContent()">
+    </div>
+    <div class="scroll-to">
+        <input type="button" id="scroll-to-companionship" value="Scroll to Companionship" class="hidden" onclick="scrollToHeader()">
+    </div>
+    <div class="scroll-to">
+        <input type="button" id="scroll-to-ministers" value="Scroll to Ministers" class="hidden" onclick="scrollToRow()">
+    </div>
+
+
+    <!-- companionship 1 -->
+    <div class="companionship">
+        <table>
+            
+            <tr><th colspan="2"><a href="dallin-scott" target="_blank">Dallin "Doc" Scott</a></th></tr>
+            <tr><th colspan="2"><a href="#LandinGottfredson">Landin "Quick Hands" Gottfredson</a></th></tr>
+            
+            <tr><td colspan="2">Sione "The Hammer" Lauti</td></tr>
+            <tr><td colspan="2">Daniel "No Witness" Khup</td></tr>
+            <tr><td colspan="2">Claire "CBreeze" Bennion</td></tr>
+            <tr><td colspan="2">Sarah "Switchblade" Ransom</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 2 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#BrendenMenlove">Brenden "Ice Man" Menlove</a></th></tr>
+            <tr><th colspan="2"><a href="#MelVickery">Mel "Mad Dog" Vickery</a></th></tr>
+
+            <tr><td colspan="2">Brodric "BroYo" Young</td></tr>
+            <tr><td colspan="2">Ryan "No Loose Ends" Patton</td></tr>
+            <tr><td colspan="2">Cora "Cipher" Chadwick</td></tr>
+            <tr><td colspan="2">Ella "The Detective" Gregory</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 3 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#BrennerMann">Brenner "The Bullet" Mann</a></th></tr>
+            <tr><th colspan="2"><a href="#TolaOdupolu">Tola "The Cobra" Odupolu</a></th></tr>
+
+            <tr><td colspan="2">Ian "McLegend" McMaster</td></tr>
+            <tr><td colspan="2">Mel "Mad Dog" Vickery</td></tr>
+            <tr><td colspan="2">Leah "The Siren" Anderson</td></tr>
+            <tr><td colspan="2">Veronica "Red Widow" Ogden</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 4 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#SpencerDagal">Spencer "Houdini" Dagal</a></th></tr>
+            <tr><th colspan="2"><a href="#DestryNay">Destry "The Avalanche" Nay</a></th></tr>
+
+            <tr><td colspan="2">Russell "No Mercy" Cluff</td></tr>
+            <tr><td colspan="2">Logan "Berry Fresh" Berry</td></tr>
+            <tr><td colspan="2">McKenna "Shadowstep" Harper</td></tr>
+            <tr><td colspan="2">Lily "Lilypad" Roofner</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 5 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#JamesSmith">James "Blackjack" Smith</a></th></tr>
+            <tr><th colspan="2"><a href="#EvanDelp">Evan "White Fang" Delp</a></th></tr>
+
+            <tr><td colspan="2">Michael "Stonefist" Thang</td></tr>
+            <tr><td colspan="2">Asher "Wildcard" Porter</td></tr>
+            <tr><td colspan="2">Taylor "The Razor" Hope</td></tr>
+            <tr><td colspan="2">Madelyn "Queenpin" Lege</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 6 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#AsherPorter">Asher "Wildcard" Porter</a></th></tr>
+            <tr><th colspan="2"><a href="#BrodricYoung">Brodric "BroYo" Young</a></th></tr>
+
+            <tr><td colspan="2">Liem "The Architect" Wilson</td></tr>
+            <tr><td colspan="2">Shaun "Vannimal" Vann</td></tr>
+            <tr><td colspan="2">Ellese "The Trickster" Green</td></tr>
+            <tr><td colspan="2">Violet "Nightshade" Greaves</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 7 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#ShaunVann">Shaun "Vannimal" Vann</a></th></tr>
+            <tr><th colspan="2"><a href="#CarterRodriguez">Carter "The Snake" Rodriguez</a></th></tr>
+
+            <tr><td colspan="2">Jaedin "Ace" Dawson</td></tr>
+            <tr><td colspan="2">Logan "The Reaper" Beardall</td></tr>
+            <tr><td colspan="2">Emma "Echo" Ballif</td></tr>
+            <tr><td colspan="2">Makenzie "The Smuggler" Petersen</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 8 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#SioneLauti">Sione "The Hammer" Lauti</a></th></tr>
+            <tr><th colspan="2"><a href="#ColtonSams">Colton "Lucky" Sams</a></th></tr>
+
+            <tr><td colspan="2">Sergio "Bloodhound" Da Silva</td></tr>
+            <tr><td colspan="2">Carter "The Snake" Rodriguez</td></tr>
+            <tr><td colspan="2">Madelyn "The Diamond" Nugent</td></tr>
+            <tr><td colspan="2">Lori "Lethal" Wilson</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 9 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#EzraHatch">Ezra "The Jackal" Hatch</a></th></tr>
+            <tr><th colspan="2"><a href="#DanielKhup">Daniel "No Witness" Khup</a></th></tr>
+
+            <tr><td colspan="2">Brenner "The Bullet" Mann</td></tr>
+            <tr><td colspan="2">James "Blackjack" Smith</td></tr>
+            <tr><td colspan="2">Ivie "The Whisper" Stucki</td></tr>
+            <tr><td colspan="2">Rylie "Smokescreen" Stucki</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 10 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#RichardNiederer">Richard "Silent Step" Niederer</a></th></tr>
+
+            <tr><td colspan="2">Jinseong "Moonshot" Mun</td></tr>
+            <tr><td colspan="2">Dallin "Doc" Scott</td></tr>
+            <tr><td colspan="2">Ray "No Escape" Myers</td></tr>
+            <tr><td colspan="2">Elisabeth "Duchess" Clark</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 11 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#JaedinDawson">Jaedin "Ace" Dawson</a></th></tr>
+            <tr><th colspan="2"><a href="#MichaelThang">Michael "Stonefist" Thang</a></th></tr>
+
+            <tr><td colspan="2">Tola "The Cobra" Odupolu</td></tr>
+            <tr><td colspan="2">Landin "Quick Hands" Gottfredson</td></tr>
+            <tr><td colspan="2">Calleigh "The Black Widow" Bell</td></tr>
+            <tr><td colspan="2">Kayla "Marauder" Yancey</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 12 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#RussellCluff">Russell "No Mercy" Cluff</a></th></tr>
+            <tr><th colspan="2"><a href="#NathanFranson">Nathan "The Surgeon" Franson</a></th></tr>
+
+            <tr><td colspan="2">Ezra "The Jackal" Hatch</td></tr>
+            <tr><td colspan="2">Colton "Lucky" Sams</td></tr>
+            <tr><td colspan="2">Mallory "The Mirage" Allen</td></tr>
+            <tr><td colspan="2">Aly "Fletch" Fletcher</td></tr>
+        </table>
+    </div>
+    
+            <!-- companionship 13 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#">Sergio "Bloodhound" Da Silva</a></th></tr>
+            <tr><th colspan="2"><a href="#">Logan "Berry Fresh" Berry</a></th></tr>
+
+            <tr><td colspan="2">Spencer "Houdini" Dagal</td></tr>
+            <tr><td colspan="2">Richard "Silent Step" Niederer</td></tr>
+            <tr><td colspan="2">Brinkley "The Switch" Moffitt</td></tr>
+            <tr><td colspan="2">Ava "Silk" Sybrowsky</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 14 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#">Logan "The Reaper" Beardall</a></th></tr>
+            <tr><th colspan="2"><a href="#">Kenyan "The Jet" Jeppsen</a></th></tr>
+
+            <tr><td colspan="2">Nathan "The Surgeon" Franson</td></tr>
+            <tr><td colspan="2">Evan "White Fang" Delp</td></tr>
+            <tr><td colspan="2">Cam "Midnight" Carter</td></tr>
+            <tr><td colspan="2">Caitlin "The Cloak" Coleman</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 15 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#">Liem "The Architect" Wilson</a></th></tr>
+            <tr><th colspan="2"><a href="#">Ryan "No Loose Ends" Patton</a></th></tr>
+
+            <tr><td colspan="2">Kenyan "The Jet" Jeppsen</td></tr>
+            <tr><td colspan="2">Nurjan "Blaze" Raikhan</td></tr>
+            <tr><td colspan="2">Miriam "The Boss" Garmon</td></tr>
+        </table>
+    </div>
+
+    <!-- companionship 16 -->
+    <div class="companionship">
+        <table>
+            <tr><th colspan="2"><a href="#">Jinseong "Moonshot" Mun</a></th></tr>
+            <tr><th colspan="2"><a href="#">Ian "McLegend" McMaster</a></th></tr>
+
+            <tr><td colspan="2">Brenden "Ice Man" Menlove</td></tr>
+            <tr><td colspan="2">Destry "The Avalanche" Nay</td></tr>
+            <tr><td colspan="2">Sandra "Silent" Williams</td></tr>
+            <tr><td colspan="2">Jewellia "Velvet Viper" Hartvigson</td></tr>
+        </table>
+    </div>
+
+    <footer>
+        &copy; 2025 Brodric Young
+    </footer>
+</body>
+</html>

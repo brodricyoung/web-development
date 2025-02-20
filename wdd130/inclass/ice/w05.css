@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#topdiv {
+    background-image: url("images/w05_circles.jpg");
+    padding: 100px;
+}
+
+h1 {
+    color: #242424;
+    text-align: right;
+}
+
+h2 {
+    color: #505050;
+    text-align: right;
+}
+
+#bottomdiv {
+    text-align: center;
+    background-color: #737373;
+}
+
+.imgbox {
+    display: inline;
+}
+
+.imgbox img{
+    max-width: 100px;
+    border-radius: 50%;
+    border-width: 1.5em;
+    border-color: #444444;
+}

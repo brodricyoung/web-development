@@ -1,0 +1,166 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sixtyfour&display=swap');
+
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: "Contrail One", 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    padding: 30px;
+}
+
+/* Top header styling*/
+header {
+    font-family: "Orbitron", "Sixtyfour", serif;
+    color: #1F74AD;
+    font-size: larger;
+    font-weight: 900;
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #E0AC00;
+}
+
+/* footer styling */
+footer {
+    padding: 30px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 15px;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+/* Companionship Group Styling */
+.companionship {
+    
+    margin-bottom: 30px;
+    padding: 30px;
+    background-color: black;
+}
+
+/* Table Headers */
+th {
+    text-align: center;
+    padding: 12px 20px;
+    background-color: #2c3e50;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Table Data */
+td {
+    padding: 12px 20px;
+    text-align: center; /* Center the other names below the headers */
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+
+/* Hyperlink Styling */
+a {
+    color: #3498db;
+}
+
+/* Odd Row Background Color */
+tr:nth-child(odd) td {
+    background-color: #f4f4f4e0;
+}
+
+/* Even Row Background Color */
+tr:nth-child(even) td {
+    background-color: #ffffff;
+}
+
+.hidden {
+    display: none;
+}
+
+.highlight-header {
+    background-color: yellow !important;
+    border-bottom: 7px solid #2c3e50;
+    
+}
+
+.highlight-row{
+    background-color: yellow !important;
+}
+
+#search, .scroll-to {
+    max-width: fit-content;
+    margin: 0 auto;
+}
+#search-bar {
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+}
+#search-button {
+    font-size: 15px;
+    width: 60px;
+}
+
+#scroll-to-companionship {
+    width: 180px;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+#scroll-to-ministers {
+    width: 180px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+
+
+    /* Make data cells block elements to stack */
+    td {
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+
+    /* Make the companionships stack on smaller screens */
+    .companionship {
+
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: black;
+    }
+
+    /* Make links more accessible */
+    a {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further adjust padding for smaller screens */
+    th, td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    /* Reduce the font size of the header */
+    th {
+        font-size: 14px;
+    }
+}

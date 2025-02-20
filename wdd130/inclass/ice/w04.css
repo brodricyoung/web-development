@@ -1,0 +1,26 @@
+body {
+    background-color: #5ca1d7;
+}
+
+#body-div {
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+}
+
+#first-p {
+    color: white;
+}
+
+h4 {
+    color: white;
+}
+
+ol {
+    font-weight: bold;
+}

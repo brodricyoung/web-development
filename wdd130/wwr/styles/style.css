@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --heading-font: "Orbitron", Times, serif;
+    --paragraph-font: "Contrail One", Roboto, Helvetica, sans-serif;
+    --body-background-color: #ffffb3;
+    --primary-color: #FFFFFF;
+    --secondary-color: #233CE6;
+    --accent1-color: #08124A;
+    --accent2-color: #A55E37;
+}
+.logo{
+    width: 80px;
+    height: auto;
+}
+#logo_link {
+    padding-top: 5px;
+}
+header {
+    background-color: var(--accent1-color);
+    color: var(--primary-color);
+}
+nav {
+    background-color: var(--accent2-color);
+}
+nav a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 35px;
+}
+nav a:hover {
+    background-color: var(--accent1-color);
+}
+body {
+    color: var(--accent1-color);
+    background-color: var(--body-background-color);
+    font-family: var(--paragraph-font);
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+#content {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+#background {
+    height: 725px;
+    color: var(--accent2-color);
+}
+.home-title {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-top: 10px;
+}
+#hero-msg h1, #hero-msg h4 {
+    text-align: center;
+}
+#hero-img {
+    width: 100%;
+}
+.button-box {
+    text-align: center;
+}
+.book, .join {
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    background-color: var(--accent2-color);
+    font-size: 18px;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+.book:hover, .join:hover {
+    background-color: var(--accent1-color);
+}
+main section {
+    text-align: center;
+}
+main section img {
+    box-sizing: border-box;
+}
+.rivers-card, .comaping-card, .rapids-card {
+    margin: 200px 0;
+}
+.card-img {
+    border: 10px solid var(--secondary-color);
+}
+.icon {
+    width: 80px;
+    padding-top: 10px;
+}
+.msg {
+    background-color: var(--accent1-color);
+    line-height: 1.5em;
+    padding: 35px;
+}
+.msg h2 {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+.msg p {
+    color: var(--primary-color);
+    font-size: 0.8em;
+    padding-bottom: 15px;
+}
+h1, h2, h4 {
+    color: var(--secondary-color);
+    font-family: var(--heading-font);
+}
+h2 {
+    margin: 0;
+}
+footer {
+    background-color: var(--accent2-color);
+    padding: 25px 50px;
+    margin-top: 200px;
+}
+footer p {
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+footer p a:hover {
+    text-decoration: underline;
+}    
+footer a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+footer a:hover {
+    background-color: var(--accent1-color);
+}
+footer .social img {
+    padding-top: 15px;
+}

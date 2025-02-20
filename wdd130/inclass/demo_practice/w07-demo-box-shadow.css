@@ -1,0 +1,9 @@
+
+
+.boxshadow{
+    box-shadow: 0 0 30px #333;
+}
+
+h1 {
+    text-shadow: 1px 1px 2px #333;
+}

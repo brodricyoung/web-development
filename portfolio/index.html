@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <p>Brodric Young: Project Portfolio</p>
+        <div class="menu-icon" id="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="embedded-systems.html">Embedded Systems</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="artisan-craftmanship.html">Artisan Craftmanship</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <div id="hero">
+        <h2 id="hero-name">Brodric Young</h2>
+        <h2 id="hero-title">Project Portfolio</h2>
+        <p>This collection showcases my projects, both in class and personal.</p>
+        <p>Each project represents a milestone in my learning and growth as an engineer and creator.</p>
+    </div>
+
+    <!-- about me card -->
+    <div id="about-me">
+        <a href="about-me.html" class="catagory-link">
+            <div class="about-card">
+                <h2>About Me</h2>
+                <p>I’m a computer engineering student with a passion for creating things, from woodworking projects in my small Utah hometown to designing circuits and applications in my college studies. My mission to Zambia and Malawi helped me grow in teamwork and service, and now I’m focused on applying my skills to make a positive impact. I’m always eager to learn, collaborate, and build projects that can better the world around me.</p>
+            </div>
+        </a>
+    </div>
+    
+    <section id="catagories">
+        <!-- embedded systems card -->
+        <a href="embedded-systems.html" class="catagory-link">
+            <div class="catagory-card">
+                <h2>Embedded Systems</h2>
+                <h3>Projects involving hardware such as microcontrollers, circuit analysis, or printed circuit boards.</h3>
+                <div class="collage">
+                    <img src="https://picsum.photos/100/100" alt="Embedded 1">
+                    <img src="https://picsum.photos/100/100" alt="Embedded 2">
+                    <img src="https://picsum.photos/100/100" alt="Embedded 3">
+                </div>
+            </div>
+        </a>
+        <!-- software card -->
+        <a href="software.html" class="catagory-link">
+            <div class="catagory-card">
+                <h2>Software</h2>
+                <h3>Programming projects like websites and software applications.</h3>
+                <div class="collage">
+                    <img src="https://picsum.photos/100/100" alt="Software 1">
+                    <img src="https://picsum.photos/100/100" alt="Software 2">
+                    <img src="https://picsum.photos/100/100" alt="Software 3">
+                </div>
+            </div>
+        </a>
+        <!-- woodworking card-->
+        <a href="artisan-craftmanship.html" class="catagory-link">
+            <div class="catagory-card">
+                <h2>Artisan Craftmanship</h2>
+                <h3>Crafting and construction projects built from wood or solid surface.</h3>
+                <div class="collage">
+                    <img src="https://picsum.photos/100/100" alt="Software 1">
+                    <img src="https://picsum.photos/100/100" alt="Software 2">
+                    <img src="https://picsum.photos/100/100" alt="Software 3">
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/brodric-young/" target="_blank">
+                <img src="icons/icons8-linkedin.svg" alt="LinkedIn">
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/brodricyoung" target="_blank">
+                <img src="icons/icons8-github.svg" alt="GitHub">
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.youtube.com/@brodricyoung1911/videos" target="_blank">
+                <img src="icons/icons8-youtube.svg" alt="YouTube">
+                <span>YouTube</span>
+            </a>
+            <a href="resume.pdf">
+                <img src="icons/icons8-resume-50.png" alt="Resume">
+                <span>Resume</span>
+            </a>
+            <a href="mailto:youngbrodric10@gmail.com">
+                <img src="icons/icons8-gmail.svg" alt="Email">
+                <span>Email</span>
+            </a>
+        </div>
+        <p>&copy; 2025 Brodric Young</p>
+        <p>icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>
+    </footer>
+
+    <!-- toggle menu for smaller screens -->
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const nav = document.getElementById("nav");
+    
+        menuIcon.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>    
+</body>
+</html>

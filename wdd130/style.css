@@ -1,0 +1,42 @@
+p {
+    font-size: 1.5em;
+    color: white;
+}
+
+h1 {
+    font-size: 3em;
+    color: #233CE6;
+    font-weight: bold;
+    background-color: white;
+    padding: 0.5em;
+    text-align: center;
+}
+
+main {
+    background-color: #08124A;
+    padding: 2em;
+}
+
+body {
+    background-color: #8A4E2E;
+}
+
+nav {
+    background-color: white;
+    padding: 0.75em;
+    min-width: 120px;
+    text-decoration: none;
+    line-height: 3em;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+nav a {
+    padding: 1em; 
+    color: #08124A;
+}
+
+nav a:hover {
+    background-color: #08124A;
+    color: white;
+}
