@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Systems</title>
+    <link rel="stylesheet" href="embedded-systems.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" id="header-p">Brodric Young: Project Portfolio</a>
+        <div class="menu-icon" id="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="embedded-systems.html">Embedded Systems</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="science-labs.html">Science Labs</a></li>
+                <li><a href="craftmanship.html">Craftmanship</a></li>
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div id="hero">
+        <h2>Science Labs</h2>
+        <p>Experimental labs in different scientific fields</p>
+    </div>
+
+    <!-- project list -->
+    <section id="project-list-section">
+        <!-- project 1 -->
+        <div class="project-card nosubs">
+            <h2><a href="https://github.com/brodricyoung/science-labs/tree/main/bio180" target="_blank" class="repo-link">Biology Labs</a><h2>
+            <h3>Labs involving concentration, macromolecules, enzyme kinetics, and scientific literature</h3>
+            <div class="photos">
+                <img src="https://picsum.photos/200/200" alt="">
+                <img src="https://picsum.photos/200/200" alt="">
+                <img src="https://picsum.photos/200/200" alt="">
+            </div>
+        </div>
+
+        <!-- project 2 -->
+        <div class="project-card nosubs">
+            <h2><a href="https://github.com/brodricyoung/science-labs/tree/main/chem105" target="_blank" class="repo-link">Chemistry Labs</a><h2>
+            <h3>Labs involving chemical reactions, spectroscopy, tritrations, and more</h3>
+            <div class="photos">
+                <img src="https://picsum.photos/200/200" alt="">
+                <img src="https://picsum.photos/200/200" alt="">
+                <img src="https://picsum.photos/200/200" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/brodric-young/" target="_blank">
+                <img src="icons/icons8-linkedin.svg" alt="LinkedIn">
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://byui.joinhandshake.com/profiles/r3njur" target="_blank">
+                <img src="icons/handshake.png" alt="Handshake">
+                <span>Handshake</span>
+            </a>
+            <a href="https://github.com/brodricyoung" target="_blank">
+                <img src="icons/icons8-github.svg" alt="GitHub">
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.youtube.com/@brodricyoung1911/videos" target="_blank">
+                <img src="icons/icons8-youtube.svg" alt="YouTube">
+                <span>YouTube</span>
+            </a>
+            <a href="resume.pdf">
+                <img src="icons/icons8-resume-50.png" alt="Resume">
+                <span>Resume</span>
+            </a>
+            <a href="mailto:youngbrodric10@gmail.com">
+                <img src="icons/icons8-gmail.svg" alt="Email">
+                <span>Email</span>
+            </a>
+        </div>
+        <p>&copy; 2025 Brodric Young</p>
+        <p>icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>
+    </footer>
+
+    <!-- toggle menu for smaller screens -->
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const nav = document.getElementById("nav");
+    
+        menuIcon.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script> 
+</body>
+</html>

@@ -51,10 +51,12 @@ header {
     z-index: 1000;
 }
 
-header p {
+#header-p {
     font-size: var(--font-size-header);
     margin: 0;
     font-family: var(--heading-family-fonts);
+    color: var(--color-white);
+    text-decoration: none;
 }
 
 .menu-icon {
@@ -153,7 +155,7 @@ nav ul li a:hover {
     font-size: var(--font-size-hero-title);
     box-sizing: content-box;
     padding-bottom: 5px;
-    border-bottom: 10px solid red;
+    border-bottom: 10px solid #3396ff;
     font-family: var(--heading-family-fonts);
     letter-spacing: 1px;
 }
@@ -216,9 +218,11 @@ nav ul li a:hover {
 ///////////////////////////////////////////////////////////////////////*/
 #catagories {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     padding: 2rem;
+    max-width: 80%;
+    justify-self: center;
 }
 
 .catagory-card {
@@ -350,13 +354,33 @@ footer p a:hover {
 /*///////////////////////////////////////////////////////////////////////
     mobile styling
 ///////////////////////////////////////////////////////////////////////*/
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
+    header {
+        padding: 8px 16px 16px 16px;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #header-p {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 1000px) {
+    #catagories {
+        grid-template-columns: repeat(1, 1fr); /* One card per row on smaller screens */
+    }
+}
+
+@media (max-width: 940px) {
     header {
         padding: 0.5rem 1rem; /* Reduce padding for mobile */
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    header p {
+    #header-p {
         font-size: 1.2rem;
+        margin: 3px 0;
     }
 
     /* Show the hamburger menu */
@@ -397,8 +421,8 @@ footer p a:hover {
     }
 }
 
-/* Display normal navigation for screens above 768px (laptops, desktops) */
-@media (min-width: 769px) {
+/* Display normal navigation for screens above 941px (laptops, desktops) */
+@media (min-width: 941px) {
     .menu-icon {
         display: none;
     }

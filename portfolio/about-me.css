@@ -51,10 +51,12 @@ header {
     z-index: 1000;
 }
 
-header p {
+#header-p {
     font-size: var(--font-size-header);
     font-family: var(--heading-family-fonts);
     margin: 0;
+    color: var(--color-white);
+    text-decoration: none;
 }
 
 .menu-icon {
@@ -446,13 +448,28 @@ footer p a:hover {
 /*///////////////////////////////////////////////////////////////////////
     mobile styling
 ///////////////////////////////////////////////////////////////////////*/
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
+    header {
+        padding: 8px 16px 16px 16px;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #header-p {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 940px) {
     header {
         padding: 0.5rem 1rem; /* Reduce padding for mobile */
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    header p {
+    #header-p {
         font-size: 1.2rem;
+        margin: 3px 0;
     }
 
     /* Show the hamburger menu */
@@ -488,6 +505,12 @@ footer p a:hover {
         margin: 0;
     }
 
+    .social-links a {
+        margin: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
     .about-content {
         flex-direction: column;
     }
@@ -534,15 +557,10 @@ footer p a:hover {
     .skill-card {
         padding: 15px;
     }
-
-    .social-links a {
-        margin: 0.5rem;
-    }
-    
 }
 
-/* Display normal navigation for screens above 768px (laptops, desktops) */
-@media (min-width: 769px) {
+/* Display normal navigation for screens above 941px (laptops, desktops) */
+@media (min-width: 941px) {
     .menu-icon {
         display: none;
     }
