@@ -8,8 +8,14 @@
     <link rel="stylesheet" href="embedded-systems.css">
 </head>
 <body>
+    <div id="overlay"></div>
+    <!-- Header -->
     <header>
-        <a href="index.html" id="header-p">Brodric Young: Project Portfolio</a>
+        <a href="index.html" id="header-p">
+            <p id="header-name">Brodric Young:</p>
+            <p id="header-project">Project Portfolio</p>
+        </a>
+        
         <div class="menu-icon" id="menu-icon">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -95,9 +101,11 @@
     <script>
         const menuIcon = document.getElementById("menu-icon");
         const nav = document.getElementById("nav");
+        const overlay = document.getElementById("overlay");
     
         menuIcon.addEventListener("click", () => {
             nav.classList.toggle("active");
+            overlay.classList.toggle("active");
         });
     </script> 
 </body>
