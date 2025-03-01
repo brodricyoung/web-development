@@ -256,3 +256,7 @@ nav a:hover {
   grid-column: 17/20;
   grid-row: 3/4;
 }
+
+img {
+  padding: 10px;
+}
