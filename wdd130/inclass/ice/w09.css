@@ -1,0 +1,73 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Charm:wght@400;700&family=Contrail+One&family=Kelly+Slab&family=Orbitron:wght@400..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #1e1e1e;
+}
+
+#content {
+    width: 300px;
+    background-color: #fff;
+    text-align: center;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+#date {
+    color: #3f5b8b;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #000;
+    font-size: 2em;
+}
+
+#text {
+    color: #938993;
+    font-size: 1.1em;
+    margin: 20px;
+}
+
+#statistics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #fff;
+    gap: 1px;
+}
+
+.stat {
+    color: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #3f5b8b;
+    width: 100%;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    
+}
+
+.stat-number sup {
+    margin-top: 25px;
+    font-size: 0.8rem;
+}
+
+.stat-name {
+    font-size: 0.7rem;
+    font
+}
