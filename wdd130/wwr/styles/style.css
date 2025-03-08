@@ -45,13 +45,16 @@ body {
     margin: 0;
     padding: 0;
 }
+body#rivers {
+    background-color: var(--accent1-color);
+}
 #content {
     max-width: 1600px;
     margin: 0 auto;
 }
 #background {
     height: 725px;
-    color: var(--accent2-color);
+    background-color: var(--accent2-color);
     grid-column: 1/11;
     grid-row: 4/9;
 }
@@ -86,7 +89,7 @@ body {
     color: white;
 }
 #hero-img {
-    height: 110%;
+    height: 112%;
     width: 100%;
 }
 .button-box {
@@ -165,7 +168,7 @@ main section img {
 }
 .msg p {
     color: var(--primary-color);
-    font-size: 0.8em;
+    font-size: 0.9em;
     padding-bottom: 15px;
 }
 h1, h2, h4 {
@@ -175,6 +178,31 @@ h1, h2, h4 {
 h2 {
     margin: 0;
 }
+.rivers-main {
+    margin-top: 215px;
+}
+ .river-section {
+    margin: 150px 50px;
+    background-color: var(--body-background-color);
+ }
+ .river-section h2 {
+    padding-top: 50px;
+    padding-left: 50px;
+    text-align: left;
+ }
+ .section-content {
+    text-align: left;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    font-size: 0.9em;
+ }
+ .river-section-img {
+    width: 100%;
+    align-self: center;
+    box-shadow: 5px 5px 10px #6f7364;
+ }
 footer {
     background-color: var(--accent2-color);
     padding: 25px 50px;
@@ -201,8 +229,16 @@ footer .social img {
     padding-top: 15px;
 }
 
+@media screen and (max-width: 1350px) {
+    #hero-img {
+        height: 132%;
+    }
+}
 
 @media screen and (max-width: 900px) {
+    header {
+        background-color: var(--accent2-color);
+    }
     #hero, .home-grid {
         display: block;
         height: auto;
@@ -224,7 +260,8 @@ footer .social img {
         display: none;
     }
     .home-title {
-        font-size: 25px;
+        font-size: 40px;
+        margin-top: 20px;
     }
     .rivers-card, .camping-card, .rapids-card { 
         margin: 50px auto;
@@ -238,11 +275,30 @@ footer .social img {
         display: block;
         margin: 0 auto;
     }
+    .msp p {
+        font-size: 0.9em;
+    }
     footer {
         margin-top: 25px;
     }
     footer a, footer p {
         margin: 10px;
+    }
+
+    .rivers-main {
+        margin-top: 0px;
+        font-size: 0.9em;
+    }
+    .river-section {
+        margin: 50px 25px;
+    }
+    .river-section h2 {
+        padding: 25px;
+        padding-bottom: 0px;
+    }
+    .section-content {
+        padding: 25px; 
+        display: block;
     }
 }
  
