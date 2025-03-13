@@ -1,0 +1,52 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1em;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 150px auto;
+    align-items: center;
+    gap: 20px;
+}
+
+/* #logo {
+    width: 200px;
+} */
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px solid #333;
+}
+
+nav a {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    background-color: #ffdb4d;
+    color: #622906;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin: 75px 0;
+}
+
