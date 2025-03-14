@@ -209,7 +209,12 @@ nav ul li a:hover {
 }
 
 #note {
-    margin: 20px 300px;
+    margin: 30px;
+    max-width: 800px;
+    justify-self: center;
+}
+#note p {
+    align-items: center;
     border: 3px solid red;
 }
 
