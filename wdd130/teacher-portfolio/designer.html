@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel-container {
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            text-align: center; /* Center the buttons */
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 5px;
+        }
+
+        .prev, .next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Rachel Young Logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="learner.html">Learner</a>
+            <a href="leader.html">Leader</a>
+            <a href="citizen.html">Citizen</a>
+            <a href="collaborator.html">Callaborator</a>
+            <a href="designer.html">Designer</a>
+            <a href="facilitator.html">Facilitator</a>
+            <a href="analyst.html">Analyst</a>
+        </nav>
+    </header>
+
+    <div id="hero">
+        <section id="hero-text">
+            <h1>ISTE Standards for Educators 5: Designer</h1>
+            <div id="divider"></div>
+            <h3>Educators design authentic, learner-driven activities and environments that recognize and accommodate learner variability.</h3>
+        </section>
+    </div>
+
+    <div id="content">
+        <div class="bullets-section">
+            <section class="bullet">
+                <h4>Accommodate Learner Differences</h4>
+                <p>
+                    <b>5.a.</b> Use technology to create, adapt and personalize learning experiences that foster independent learning and accommodate learner differences and needs.
+                </p>
+            </section>
+            <section class="bullet">
+                <h4>Design Authentic Learning Activities</h4>
+                <p>
+                    <b>5.b.</b> Design authentic learning activities that align with content area standards and use digital tools and resources to maximize active, deep learning.
+                </p>
+            </section>
+            <section class="bullet">
+                <h4>Model Digital Tool Use</h4>
+                <p>
+                    <b>5.c.</b> Explore and apply instructional design principles to create innovative digital learning environments that engage and support learning.
+                </p>
+            </section>
+        </div>
+
+        <section class="artifact-section">
+            <h2>Artifact</h2>
+            <h4>Title: Narrative Writing and Narrative Art, a Powerpoint created by Rachel Young, 2023.</h4>
+            <p>
+                This powerpoint is central to a flipped lesson plan I created integrating standards in ELA and Visual Arts. In a flipped lesson plan, traditional teaching methods are reversed. Students are introduced to new content at home or independently at school through videos or other materials, and classroom time is then used for activities, discussions, and application of the learned concepts. This powerpoint connecting narrative writing and narrative art would be viewed by students independently and previous to the lesson.
+            </p>
+            <div class="artifact-img-link-section">
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <img src="images/designer-powerpoint/rsz_slide1.jpg" alt="Slide 1">
+                        <img src="images/designer-powerpoint/rsz_1rsz_slide2.jpg" alt="Slide 2">
+                        <img src="images/designer-powerpoint/rsz_slide3.jpg" alt="Slide 3">
+                        <img src="images/designer-powerpoint/rsz_slide4.jpg" alt="Slide 4">
+                        <img src="images/designer-powerpoint/rsz_slide5.jpg" alt="Slide 5">
+                    </div>
+                    <div class="controls">
+                        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="no-img-section">
+            <h2>Reflection</h2>
+            <p>
+                This lesson plan and powerpoint supports ISTSE Standard 5.b by designing an authentic learning activity that is aligned with the content area standards of ELA and Visual Arts. The video is intended to be used as a resource within the lesson to deliver content so that time in the classroom can be devoted to active learning activities, such as discussions, problem-solving, and collaborative projects. This hands-on approach fosters better understanding of the material and supports the active, deep learning of ISTE Standard 5.b. In the flipped lesson plan students can learn at their own pace and review the powerpoint as needed. Those who grasp concepts quickly can move ahead, while others who need more time can take it without feeling rushed which supports ISTE Standard 5.a accommodating learner differences and needs.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p id="license">
+            Professional Teacher Portfolio by Rachel Young is licensed under 
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1">
+                CC BY-NC-ND 4.0
+                <img src="images/license-icons/cc.svg" alt="license icon">
+                <img src="images/license-icons/by.svg" alt="license icon">
+                <img src="images/license-icons/nc.svg" alt="license icon">
+                <img src="images/license-icons/nd.svg" alt="license icon">
+            </a>
+        </p>
+        <p>
+            ISTE Standards for Educators, ©2017, ISTE (International Society for Technology in Education) iste.org. All rights reserved. 
+        </p>
+        <p>
+            All images used in this site are licensed under Creative commons or taken from public domain.
+        </p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveSlide(direction) {
+            const carousel = document.querySelector('.carousel');
+            const totalImages = document.querySelectorAll('.carousel img').length;
+            
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = totalImages - 1;
+            } else if (currentIndex >= totalImages) {
+                currentIndex = 0;
+            }
+
+            const offset = -currentIndex * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+</html>
