@@ -8,17 +8,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="overlay"></div>
     <header>
-        <img src="images/logo.png" alt="Rachel Young Logo">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="learner.html">Learner</a>
-            <a href="leader.html">Leader</a>
-            <a href="citizen.html">Citizen</a>
-            <a href="collaborator.html">Callaborator</a>
-            <a href="designer.html">Designer</a>
-            <a href="facilitator.html">Facilitator</a>
-            <a href="analyst.html">Analyst</a>
+        <a id="logo" href="index.html"><img src="images/logo.png" alt="Rachel Young Logo"></a>
+        <div class="menu-icon" id="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learner.html">Learner</a></li>
+                <li><a href="leader.html">Leader</a></li>
+                <li><a href="citizen.html">Citizen</a></li>
+                <li><a href="collaborator.html">Collaborator</a></li>
+                <li><a href="designer.html">Designer</a></li>
+                <li><a href="facilitator.html">Facilitator</a></li>
+                <li><a href="analyst.html">Analyst</a></li>
+            </ul>            
         </nav>
     </header>
 
@@ -27,7 +35,7 @@
             <img src="images/hero.jpg" alt="colorful background pattern">
         </div>
         <section id="hero-text">
-            <h1>Professional Teacher Portfolio</h1>
+            <h1 id="home">Professional Teacher Portfolio</h1>
             <div id="divider"></div>
         </section>
     </div>
@@ -40,23 +48,27 @@
             </p>
         </section>
 
-        <section class="with-img-section">
-            <div class="text">
+        <div class="colored-section">
+            <section class="with-img-section">
                 <h2>Teaching philosophy</h2>
-                <p>
-                    Before I learned to read, I loved listening to my mom read stacks, very large stacks, of books to me every day. This daily ritual not only instilled in me a deep love for stories but also laid the foundation for my educational journey. Story time, as a cherished and formative experience, not only prepared me for the academic challenges of school but also equipped me with essential life skills.
-                </p>
-
-                <p>
-                    As an educator, I recognize the enduring value of storytelling and its pivotal role in fostering a love for learning. While my personal connection to story time remains steadfast, I acknowledge that today's learners are navigating a world enriched with a variety of technologies. In this fast-paced, technology-driven era, my philosophy centers on harnessing these tools to enhance instruction and maximize the potential of every student.
-                </p>
-
-                <p>
-                    Understanding that my attitude, actions, and teaching approach significantly influence the learning environment, I embrace the role of an innovative educator. In a landscape marked by rapid growth and constant change, I position myself as a perpetual learner, dedicated to continuous improvement. I view technology not as a substitute for traditional methods but as a powerful tool that, when used effectively, can amplify the learning experience. By weaving together the timeless magic of storytelling with the possibilities afforded by technology, I aim to cultivate not only knowledgeable individuals but lifelong learners who find joy and purpose in their educational journey.
-                </p>
-            </div>
-            <img src="images/books.jpg" alt="Stack of books">
-        </section>
+                <div class="text">
+                    <p>
+                        Before I learned to read, I loved listening to my mom read stacks, very large stacks, of books to me every day. This daily ritual not only instilled in me a deep love for stories but also laid the foundation for my educational journey. Story time, as a cherished and formative experience, not only prepared me for the academic challenges of school but also equipped me with essential life skills.
+                    </p>
+    
+                    <p>
+                        As an educator, I recognize the enduring value of storytelling and its pivotal role in fostering a love for learning. While my personal connection to story time remains steadfast, I acknowledge that today's learners are navigating a world enriched with a variety of technologies. In this fast-paced, technology-driven era, my philosophy centers on harnessing these tools to enhance instruction and maximize the potential of every student.
+                    </p>
+    
+                    <p>
+                        Understanding that my attitude, actions, and teaching approach significantly influence the learning environment, I embrace the role of an innovative educator. In a landscape marked by rapid growth and constant change, I position myself as a perpetual learner, dedicated to continuous improvement. I view technology not as a substitute for traditional methods but as a powerful tool that, when used effectively, can amplify the learning experience. By weaving together the timeless magic of storytelling with the possibilities afforded by technology, I aim to cultivate not only knowledgeable individuals but lifelong learners who find joy and purpose in their educational journey.
+                    </p>
+                </div>
+                <!-- <div id="image"> -->
+                    <img src="images/books.jpg" alt="Stack of books">
+                <!-- </div> -->
+            </section>
+        </div>  
     </div>
 
     <footer>
@@ -78,7 +90,19 @@
                 All images used in this site are licensed under Creative commons or taken from public domain.
             </p>
         </div>
-        <a href="site-plan.html">Site Plan</a>
+        <a href="site-plan.html" class="site-plan-link">Site Plan</a>
     </footer>
+
+    <!-- toggle menu for smaller screens -->
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const nav = document.getElementById("nav");
+        const overlay = document.getElementById("overlay");
+    
+        menuIcon.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            overlay.classList.toggle("active");
+        });
+    </script> 
 </body>
 </html>
