@@ -8,21 +8,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="overlay"></div>
     <header>
-        <img src="images/logo.png" alt="Rachel Young Logo">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="learner.html">Learner</a>
-            <a href="leader.html">Leader</a>
-            <a href="citizen.html">Citizen</a>
-            <a href="collaborator.html">Callaborator</a>
-            <a href="designer.html">Designer</a>
-            <a href="facilitator.html">Facilitator</a>
-            <a href="analyst.html">Analyst</a>
+        <a id="logo" href="index.html"><img src="images/logo.png" alt="Rachel Young Logo"></a>
+        <div class="menu-icon" id="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learner.html">Learner</a></li>
+                <li><a href="leader.html">Leader</a></li>
+                <li><a href="citizen.html">Citizen</a></li>
+                <li><a href="collaborator.html">Collaborator</a></li>
+                <li><a href="designer.html">Designer</a></li>
+                <li><a href="facilitator.html">Facilitator</a></li>
+                <li><a href="analyst.html">Analyst</a></li>
+            </ul>            
         </nav>
     </header>
 
     <div id="hero">
+        <div id="hero-banner"></div>
         <section id="hero-text">
             <h1>ISTE Standards for Educators 6: Facilitator</h1>
             <div id="divider"></div>
@@ -58,20 +67,22 @@
             </section>
         </div>
 
-        <section class="artifact-section">
-            <h2>Artifact</h2>
-            <h4>Title: Preschool Learning Online</h4>
-            <p>
-                Families become a part of their child's early learning experience through virtual preschool experiences the whole family can enjoy. Four important features of online learning are shared in this article which educates parents and families in what they can expect from this unique experience including interactive Learning, flexible schedules, parent engagement, and a supportive learning community.
-            </p>
-            <div class="artifact-img-link-section">
-                <img src="images/facilitator-virtual-prek.jpg" alt="Pre-K student with computer">
-                <h4 class="artifact-link"><a href="https://www.edutopia.org/article/building-community-virtual-pre-k-classroom/">Building Community in a Virtual Pre-K Classroom</a></h4>
+        <div class="artifact-bg">
+            <section class="artifact-section">
+                <h2>Artifact</h2>
+                <h4>Title: Preschool Learning Online</h4>
                 <p>
-                    Foundational strategies of effective early childhood education that teachers used in the classroom work well for remote learning too.
+                    Families become a part of their child's early learning experience through virtual preschool experiences the whole family can enjoy. Four important features of online learning are shared in this article which educates parents and families in what they can expect from this unique experience including interactive Learning, flexible schedules, parent engagement, and a supportive learning community.
                 </p>
-            </div>
-        </section>
+                <div class="artifact-img-link-section">
+                    <img src="images/facilitator-virtual-prek.jpg" alt="Pre-K student with computer">
+                    <h4 class="artifact-link"><a href="https://www.edutopia.org/article/building-community-virtual-pre-k-classroom/">Building Community in a Virtual Pre-K Classroom</a></h4>
+                    <p>
+                        Foundational strategies of effective early childhood education that teachers used in the classroom work well for remote learning too.
+                    </p>
+                </div>
+            </section>
+        </div>
 
         <section class="no-img-section">
             <h2>Reflection</h2>
@@ -100,7 +111,19 @@
                 All images used in this site are licensed under Creative commons or taken from public domain.
             </p>
         </div>
-        <a href="site-plan.html">Site Plan</a>
+        <a href="site-plan.html" target="_blank" class="site-plan-link">Site Plan</a>
     </footer>
+
+    <!-- toggle menu for smaller screens -->
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const nav = document.getElementById("nav");
+        const overlay = document.getElementById("overlay");
+    
+        menuIcon.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            overlay.classList.toggle("active");
+        });
+    </script> 
 </body>
 </html>

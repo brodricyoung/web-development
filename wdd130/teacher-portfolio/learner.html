@@ -8,21 +8,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="overlay"></div>
     <header>
-        <img src="images/logo.png" alt="Rachel Young Logo">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="learner.html">Learner</a>
-            <a href="leader.html">Leader</a>
-            <a href="citizen.html">Citizen</a>
-            <a href="collaborator.html">Callaborator</a>
-            <a href="designer.html">Designer</a>
-            <a href="facilitator.html">Facilitator</a>
-            <a href="analyst.html">Analyst</a>
+        <a id="logo" href="index.html"><img src="images/logo.png" alt="Rachel Young Logo"></a>
+        <div class="menu-icon" id="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learner.html">Learner</a></li>
+                <li><a href="leader.html">Leader</a></li>
+                <li><a href="citizen.html">Citizen</a></li>
+                <li><a href="collaborator.html">Collaborator</a></li>
+                <li><a href="designer.html">Designer</a></li>
+                <li><a href="facilitator.html">Facilitator</a></li>
+                <li><a href="analyst.html">Analyst</a></li>
+            </ul>            
         </nav>
     </header>
 
     <div id="hero">
+        <div id="hero-banner"></div>
         <section id="hero-text">
             <h1>ISTE Standards for Educators 1: Learner</h1>
             <div id="divider"></div>
@@ -52,24 +61,26 @@
             </section>
         </div>
 
-        <section class="artifact-section">
-            <h2>Artifact</h2>
-            <h4>Title: A Framework for Thinking About Tech Integration, an article featured in Edutopia, written by P.E. France, 2020.</h4>
-            <p>
-                Edutopia, a trusted information source in the educational community, is working to transform education through the use of technology in the classroom. Whether you are an experienced and savvy tech user, or a novice like me, this article provides a framework that can guide your use of technology in the classroom. The author challenges educators to consider the purpose of technology and the importance of utilizing it in ways that will maximize learning while minimizing complexity. Further, the article reminds educators that technology should not distance students, rather it can be a powerful resource in connecting students, teachers, and families. I chose this artifact to serve as a guide for setting professional goals to learn about and use technology in the most effective ways.
-            </p>
-            <div class="artifact-img-link-section">
-                <img src="images/learner-using-tech.jpg" alt="Student using a computer">
-                <h4 class="artifact-link"><a href="https://www.edutopia.org/article/framework-thinking-about-tech-integration">A Framework for Thinking About Tech Integration</a></h4>
+        <div class="artifact-bg">
+            <section class="artifact-section">
+                <h2>Artifact</h2>
+                <h4>Title: A Framework for Thinking About Tech Integration, an article featured in Edutopia, written by P.E. France, 2020.</h4>
                 <p>
-                    Apps and other digital tools should minimize complexity while prioritizing the authentic connections that are central to learning.
+                    Edutopia, a trusted information source in the educational community, is working to transform education through the use of technology in the classroom. Whether you are an experienced and savvy tech user, or a novice like me, this article provides a framework that can guide your use of technology in the classroom. The author challenges educators to consider the purpose of technology and the importance of utilizing it in ways that will maximize learning while minimizing complexity. Further, the article reminds educators that technology should not distance students, rather it can be a powerful resource in connecting students, teachers, and families. I chose this artifact to serve as a guide for setting professional goals to learn about and use technology in the most effective ways.
                 </p>
-            </div>
-        </section>
+                <div class="artifact-img-link-section">
+                    <img src="images/learner-using-tech.jpg" alt="Student using a computer">
+                    <h4 class="artifact-link"><a href="https://www.edutopia.org/article/framework-thinking-about-tech-integration">A Framework for Thinking About Tech Integration</a></h4>
+                    <p>
+                        Apps and other digital tools should minimize complexity while prioritizing the authentic connections that are central to learning.
+                    </p>
+                </div>
+            </section>
+        </div>
 
         <section class="with-img-section">
+            <h2>Reflection</h2>
             <div class="text">
-                <h2>Reflection</h2>
                 <p>
                     We knew it was going to be a great day when our teacher wheeled a large cart into our classroom holding a television and a VCR player! We loved any opportunity to escape the regular lecture and routine of the classroom and learn from a machine that brought information to life and kept our attention. In addition to the occasional informational video, we could earn time in the “book nook” and enjoy a read-along-book with a cassette player and headphones. Thirty years ago this is how I would have defined instructional technology in the classroom and it was often used as a reward for good work or behavior in the classroom.  Thankfully, Instructional technology today goes far beyond what I experienced and can include an array of digital devices, software applications for planning, learning, progress monitoring, and even assessing. I have learned that instructional/educational technology is about integrating various tools, techniques, and resources to improve instruction and enhance learning. It is not simply using technology in the classroom but discovering ways to incorporate it as a way to increase my capacity and effectiveness  as an educator. With my newfound knowledge, and guidance from ISTE Standard 1.a, I will set goals to explore and apply technology in my future classroom based on this framework. 
                 </p>
@@ -97,7 +108,19 @@
                 All images used in this site are licensed under Creative commons or taken from public domain.
             </p>
         </div>
-        <a href="site-plan.html">Site Plan</a>
+        <a href="site-plan.html" target="_blank" class="site-plan-link">Site Plan</a>
     </footer>
+
+    <!-- toggle menu for smaller screens -->
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const nav = document.getElementById("nav");
+        const overlay = document.getElementById("overlay");
+    
+        menuIcon.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            overlay.classList.toggle("active");
+        });
+    </script> 
 </body>
 </html>

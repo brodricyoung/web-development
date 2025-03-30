@@ -12,7 +12,7 @@
 
         /* Slideshow container */
         .carousel-container {
-            max-width: 600px;
+            width: 100%;
             position: relative;
             margin: auto;
         }
@@ -60,7 +60,7 @@
         }
 
         .active, .dot:hover {
-            background-color: #717171;
+            background-color: rgba(0, 0, 0, 0.5);;
         }
 
         /* Fading animation */
@@ -77,21 +77,30 @@
 
 </head>
 <body> 
+    <div id="overlay"></div>
     <header>
-        <img src="images/logo.png" alt="Rachel Young Logo">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="learner.html">Learner</a>
-            <a href="leader.html">Leader</a>
-            <a href="citizen.html">Citizen</a>
-            <a href="collaborator.html">Callaborator</a>
-            <a href="designer.html">Designer</a>
-            <a href="facilitator.html">Facilitator</a>
-            <a href="analyst.html">Analyst</a>
+        <a id="logo" href="index.html"><img src="images/logo.png" alt="Rachel Young Logo"></a>
+        <div class="menu-icon" id="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learner.html">Learner</a></li>
+                <li><a href="leader.html">Leader</a></li>
+                <li><a href="citizen.html">Citizen</a></li>
+                <li><a href="collaborator.html">Collaborator</a></li>
+                <li><a href="designer.html">Designer</a></li>
+                <li><a href="facilitator.html">Facilitator</a></li>
+                <li><a href="analyst.html">Analyst</a></li>
+            </ul>            
         </nav>
     </header>
 
     <div id="hero">
+        <div id="hero-banner"></div>
         <section id="hero-text">
             <h1>ISTE Standards for Educators 5: Designer</h1>
             <div id="divider"></div>
@@ -121,35 +130,37 @@
             </section>
         </div>
 
-        <section class="artifact-section">
-            <h2>Artifact</h2>
-            <h4>Title: Narrative Writing and Narrative Art, a Powerpoint created by Rachel Young, 2023.</h4>
-            <p>
-                This powerpoint is central to a flipped lesson plan I created integrating standards in ELA and Visual Arts. In a flipped lesson plan, traditional teaching methods are reversed. Students are introduced to new content at home or independently at school through videos or other materials, and classroom time is then used for activities, discussions, and application of the learned concepts. This powerpoint connecting narrative writing and narrative art would be viewed by students independently and previous to the lesson.
-            </p>
-            <div class="artifact-img-link-section">
-                <div class="carousel-container">
-                    <div class="carousel">
-                        <img class="slide fade" src="images/designer-powerpoint/rsz_slide1.jpg" alt="Slide 1">
-                        <img class="slide fade" src="images/designer-powerpoint/rsz_1rsz_slide2.jpg" alt="Slide 2">
-                        <img class="slide fade" src="images/designer-powerpoint/rsz_slide3.jpg" alt="Slide 3">
-                        <img class="slide fade" src="images/designer-powerpoint/rsz_slide4.jpg" alt="Slide 4">
-                        <img class="slide fade" src="images/designer-powerpoint/rsz_slide5.jpg" alt="Slide 5">
-                    </div>
-                    <div class="controls">
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <div class="dots">
-                            <span class="dot" onclick="currentSlide(1)"></span>
-                            <span class="dot" onclick="currentSlide(2)"></span>
-                            <span class="dot" onclick="currentSlide(3)"></span>
-                            <span class="dot" onclick="currentSlide(4)"></span>
-                            <span class="dot" onclick="currentSlide(5)"></span>
+        <div class="artifact-bg">
+            <section class="artifact-section">
+                <h2>Artifact</h2>
+                <h4>Title: Narrative Writing and Narrative Art, a Powerpoint created by Rachel Young, 2023.</h4>
+                <p>
+                    This powerpoint is central to a flipped lesson plan I created integrating standards in ELA and Visual Arts. In a flipped lesson plan, traditional teaching methods are reversed. Students are introduced to new content at home or independently at school through videos or other materials, and classroom time is then used for activities, discussions, and application of the learned concepts. This powerpoint connecting narrative writing and narrative art would be viewed by students independently and previous to the lesson.
+                </p>
+                <div class="artifact-img-link-section">
+                    <div class="carousel-container">
+                        <div class="carousel">
+                            <img class="slide fade" src="images/designer-powerpoint/rsz_slide1.jpg" alt="Slide 1">
+                            <img class="slide fade" src="images/designer-powerpoint/rsz_1rsz_slide2.jpg" alt="Slide 2">
+                            <img class="slide fade" src="images/designer-powerpoint/rsz_slide3.jpg" alt="Slide 3">
+                            <img class="slide fade" src="images/designer-powerpoint/rsz_slide4.jpg" alt="Slide 4">
+                            <img class="slide fade" src="images/designer-powerpoint/rsz_slide5.jpg" alt="Slide 5">
                         </div>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        <div class="controls">
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <div class="dots">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                                <span class="dot" onclick="currentSlide(4)"></span>
+                                <span class="dot" onclick="currentSlide(5)"></span>
+                            </div>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <section class="no-img-section">
             <h2>Reflection</h2>
@@ -178,7 +189,7 @@
                 All images used in this site are licensed under Creative commons or taken from public domain.
             </p>
         </div>
-        <a href="site-plan.html">Site Plan</a>
+        <a href="site-plan.html" target="_blank" class="site-plan-link">Site Plan</a>
     </footer>
 
     <script>
@@ -211,5 +222,17 @@
         dots[slideIndex-1].className += " active";
         }
     </script>
+
+    <!-- toggle menu for smaller screens -->
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const nav = document.getElementById("nav");
+        const overlay = document.getElementById("overlay");
+    
+        menuIcon.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            overlay.classList.toggle("active");
+        });
+    </script> 
 </body>
 </html>

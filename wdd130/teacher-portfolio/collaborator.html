@@ -8,21 +8,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="overlay"></div>
     <header>
-        <img src="images/logo.png" alt="Rachel Young Logo">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="learner.html">Learner</a>
-            <a href="leader.html">Leader</a>
-            <a href="citizen.html">Citizen</a>
-            <a href="collaborator.html">Callaborator</a>
-            <a href="designer.html">Designer</a>
-            <a href="facilitator.html">Facilitator</a>
-            <a href="analyst.html">Analyst</a>
+        <a id="logo" href="index.html"><img src="images/logo.png" alt="Rachel Young Logo"></a>
+        <div class="menu-icon" id="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learner.html">Learner</a></li>
+                <li><a href="leader.html">Leader</a></li>
+                <li><a href="citizen.html">Citizen</a></li>
+                <li><a href="collaborator.html">Collaborator</a></li>
+                <li><a href="designer.html">Designer</a></li>
+                <li><a href="facilitator.html">Facilitator</a></li>
+                <li><a href="analyst.html">Analyst</a></li>
+            </ul>            
         </nav>
     </header>
 
     <div id="hero">
+        <div id="hero-banner"></div>
         <section id="hero-text">
             <h1>ISTE Standards for Educators 4: Collaborator</h1>
             <div id="divider"></div>
@@ -58,17 +67,19 @@
             </section>
         </div>
 
-        <section class="artifact-section">
-            <h2>Artifact</h2>
-            <h4>Title: How and Why are Educators Using Instagram. An Article by Carpenter, Morrison, and Lee, 2020.</h4>
-            <p>
-                Educators have found that social media can be a valuable resource to share ideas and network with others. The article titled "How and Why are Educators Using Instagram?" authored by Jeffrey P. Carpenter, Scott A. Morrison, Madeline Craft, and Michalene Lee explores the ways in which educators are utilizing the popular social media platform, Instagram, and the motivations driving their use. The authors investigate the various reasons teachers have for using Instagram as a resource and found that educators are connecting globally with other educators to share teaching practices, such as enhancing classroom engagement, fostering creativity, and connecting with students in a more relatable manner.
-            </p>
-            <div class="artifact-img-link-section">
-                <img src="images/collaborator-instagram.jpg" alt="Social Media Butterfly - Instagram">
-                <h4 class="artifact-link"><a href="https://www.sciencedirect.com/science/article/pii/S0742051X20313408?ref=pdf_download&fr=RR-2&rr=920f10564b57283a">How and why are educators using Instagram?</a></h4>
-            </div>
-        </section>
+        <div class="artifact-bg">
+            <section class="artifact-section">
+                <h2>Artifact</h2>
+                <h4>Title: How and Why are Educators Using Instagram. An Article by Carpenter, Morrison, and Lee, 2020.</h4>
+                <p>
+                    Educators have found that social media can be a valuable resource to share ideas and network with others. The article titled "How and Why are Educators Using Instagram?" authored by Jeffrey P. Carpenter, Scott A. Morrison, Madeline Craft, and Michalene Lee explores the ways in which educators are utilizing the popular social media platform, Instagram, and the motivations driving their use. The authors investigate the various reasons teachers have for using Instagram as a resource and found that educators are connecting globally with other educators to share teaching practices, such as enhancing classroom engagement, fostering creativity, and connecting with students in a more relatable manner.
+                </p>
+                <div class="artifact-img-link-section">
+                    <img src="images/collaborator-instagram.jpg" alt="Social Media Butterfly - Instagram">
+                    <h4 class="artifact-link"><a href="https://www.sciencedirect.com/science/article/pii/S0742051X20313408?ref=pdf_download&fr=RR-2&rr=920f10564b57283a">How and why are educators using Instagram?</a></h4>
+                </div>
+            </section>
+        </div>
 
         <section class="no-img-section">
             <h2>Reflection</h2>
@@ -97,7 +108,19 @@
                 All images used in this site are licensed under Creative commons or taken from public domain.
             </p>
         </div>
-        <a href="site-plan.html">Site Plan</a>
+        <a href="site-plan.html" target="_blank" class="site-plan-link">Site Plan</a>
     </footer>
+
+    <!-- toggle menu for smaller screens -->
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const nav = document.getElementById("nav");
+        const overlay = document.getElementById("overlay");
+    
+        menuIcon.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            overlay.classList.toggle("active");
+        });
+    </script> 
 </body>
 </html>

@@ -8,21 +8,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="overlay"></div>
     <header>
-        <img src="images/logo.png" alt="Rachel Young Logo">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="learner.html">Learner</a>
-            <a href="leader.html">Leader</a>
-            <a href="citizen.html">Citizen</a>
-            <a href="collaborator.html">Callaborator</a>
-            <a href="designer.html">Designer</a>
-            <a href="facilitator.html">Facilitator</a>
-            <a href="analyst.html">Analyst</a>
+        <a id="logo" href="index.html"><img src="images/logo.png" alt="Rachel Young Logo"></a>
+        <div class="menu-icon" id="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learner.html">Learner</a></li>
+                <li><a href="leader.html">Leader</a></li>
+                <li><a href="citizen.html">Citizen</a></li>
+                <li><a href="collaborator.html">Collaborator</a></li>
+                <li><a href="designer.html">Designer</a></li>
+                <li><a href="facilitator.html">Facilitator</a></li>
+                <li><a href="analyst.html">Analyst</a></li>
+            </ul>            
         </nav>
     </header>
 
     <div id="hero">
+        <div id="hero-banner"></div>
         <section id="hero-text">
             <h1>ISTE Standards for Educators 3: Citizen</h1>
             <div id="divider"></div>
@@ -58,19 +67,21 @@
             </section>
         </div>
 
-        <section class="artifact-section">
-            <h2>Artifact</h2>
-            <h4>Title: Digital Citizenship and Social Media, a Doodly Presentation, by Rachel Young, 2023.</h4>
-            <p>
-                Teaching students about safety while using social media is crucial in today's digital age. Social media platforms offer various opportunities for communication, collaboration, and learning, but they also present potential risks. I created this video to provide students with information and guidelines to keep them safe while using platforms such as Facebook, Instagram, and Snapchat. While many students access these platforms on a daily basis, few of them actually understand the terms and conditions they agreed to when they created their account. In this video I highlight the "small print", the terms and conditions that are often overlooked.
-            </p>
-            <div class="artifact-img-link-section">
-                <video controls>
-                    <source src="images/citizen-digital-citizenship-and-social-media.mp4" type="video/mp4">
-                    Doodly video about social media
-                  </video>
-            </div>
-        </section>
+        <div class="artifact-bg">
+            <section class="artifact-section">
+                <h2>Artifact</h2>
+                <h4>Title: Digital Citizenship and Social Media, a Doodly Presentation, by Rachel Young, 2023.</h4>
+                <p>
+                    Teaching students about safety while using social media is crucial in today's digital age. Social media platforms offer various opportunities for communication, collaboration, and learning, but they also present potential risks. I created this video to provide students with information and guidelines to keep them safe while using platforms such as Facebook, Instagram, and Snapchat. While many students access these platforms on a daily basis, few of them actually understand the terms and conditions they agreed to when they created their account. In this video I highlight the "small print", the terms and conditions that are often overlooked.
+                </p>
+                <div class="artifact-img-link-section">
+                    <video controls>
+                        <source src="images/citizen-digital-citizenship-and-social-media.mp4" type="video/mp4">
+                        Doodly video about social media
+                    </video>
+                </div>
+            </section>
+        </div>
 
         <section class="no-img-section">
             <h2>Reflection</h2>
@@ -99,7 +110,19 @@
                 All images used in this site are licensed under Creative commons or taken from public domain.
             </p>
         </div>
-        <a href="site-plan.html">Site Plan</a>
+        <a href="site-plan.html" target="_blank" class="site-plan-link">Site Plan</a>
     </footer>
+
+    <!-- toggle menu for smaller screens -->
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const nav = document.getElementById("nav");
+        const overlay = document.getElementById("overlay");
+    
+        menuIcon.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            overlay.classList.toggle("active");
+        });
+    </script> 
 </body>
 </html>
