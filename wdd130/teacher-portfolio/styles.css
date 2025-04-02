@@ -279,6 +279,10 @@ h4.artifact-link{
     color: #0023a3
 }
 
+#prev, #next {
+    color: white;
+}
+
 .artifact-img-link-section img {
     margin-top: 3em;
 }
@@ -501,6 +505,32 @@ footer a {
 
     footer .license-stuff {
         margin-left: 0.1em;
+    }
+
+    #prev, #next {
+        font-size: 14px;
+        padding: 2px 10px;
+        margin: 0 10px;
+    }
+
+    .dot {
+        margin: 0 auto;
+        height: 12px;
+        width: 12px;
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #prev, #next {
+        font-size: 12px;
+        padding: 2px 8px;
+        margin: 0 5px;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
     }
 }
 

@@ -30,7 +30,7 @@
         .dots {
             display: inline;
         }
-        .prev, .next {
+        #prev, #next {
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
@@ -42,7 +42,7 @@
         }
 
         /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
+        #prev:hover, #next:hover {
             background-color: rgba(0,0,0,0.8);
         }
 
@@ -147,7 +147,7 @@
                             <img class="slide fade" src="images/designer-powerpoint/rsz_slide5.jpg" alt="Slide 5">
                         </div>
                         <div class="controls">
-                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a id="prev" onclick="plusSlides(-1)">&#10094;</a>
                             <div class="dots">
                                 <span class="dot" onclick="currentSlide(1)"></span>
                                 <span class="dot" onclick="currentSlide(2)"></span>
@@ -155,7 +155,7 @@
                                 <span class="dot" onclick="currentSlide(4)"></span>
                                 <span class="dot" onclick="currentSlide(5)"></span>
                             </div>
-                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a id="next" onclick="plusSlides(1)">&#10095;</a>
                         </div>
                     </div>
                 </div>
