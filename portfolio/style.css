@@ -312,10 +312,12 @@ nav ul li a:hover {
     margin-top: 1rem;
 }
 
-.collage img {
+.collage img, .collage video {
     width: 100%;
     height: auto;
     border-radius: 4px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
 }
 
 .catagory-link {
@@ -471,6 +473,14 @@ footer p a:hover {
 @media (max-width: 438px) {
     .menu-icon {
         top: 33.234px;
+    }
+
+    .collage {
+        display: inline;
+    }
+    
+    #catagories {
+        max-width: 100%;
     }
 }
 
