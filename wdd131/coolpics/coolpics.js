@@ -25,7 +25,9 @@ gallery.addEventListener('click', (event) => {
   const dialog = document.createElement('dialog');
   dialog.classList.add('image-viewer');
 
-  const fullSrc = `${clickedImg.src.split('-')[0]}-full.jpeg`;
+  const imageName = clickedImg.src.split('/')[4];
+  const norrisPart = imageName.split('-')[0];
+  const fullSrc = `${norrisPart}-full.jpeg`;
   dialog.innerHTML = `
     <img src="${fullSrc}" alt="${clickedImg.alt}">
     <button class="close-viewer">X</button>
