@@ -25,7 +25,7 @@ gallery.addEventListener('click', (event) => {
   const dialog = document.createElement('dialog');
   dialog.classList.add('image-viewer');
 
-  const imageName = clickedImg.src.split('/')[4];
+  const imageName = clickedImg.src.split('/')[6];
   const norrisPart = imageName.split('-')[0];
   const fullSrc = `${norrisPart}-full.jpeg`;
   dialog.innerHTML = `
