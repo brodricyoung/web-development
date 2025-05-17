@@ -17,22 +17,6 @@ handleResize();
 window.addEventListener("resize", handleResize);
 
 
-// const images = document.querySelectorAll("img");
-// images.forEach((image) => {
-//     image.addEventListener("click", () => {
-//         const dialog = document.createElement("dialog");
-//         dialog.classList.add("image-viewer");
-//         dialog.innerHTML = `<img src="${image.src}" alt="${image.alt}"><button class="close-viewer">X</button>`;
-//         dialog.querySelector(".close-viewer").addEventListener("click", () => {
-//             dialog.close();
-//             dialog.remove();
-//         })
-//         document.body.appendChild(dialog);
-//         dialog.showModal();
-//     });
-// });
-
-
 const gallery = document.querySelector('.gallery');
 
 gallery.addEventListener('click', (event) => {
