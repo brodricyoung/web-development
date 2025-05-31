@@ -12,10 +12,14 @@
 
 img {
     width: 100%;
+    max-width: 45%;
+    display: block;
+    justify-self: center;
 }
 
 body {
     font-family: var(--body-font);
+    margin: 0 auto;
 }
 
 .skiptocontent a {
@@ -63,20 +67,41 @@ nav a {
 main {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    margin-top: 2.5em;
 }
 
 #filter-box {
     border: var(--red-color-border);
     grid-column: 2/3;
+    grid-row: 1/2;
+    width: 55%;
+    margin: 0 auto;
 }
 
 .book-card-full {
     grid-column: 1/2;
     display: grid;
     grid-template-columns: 1fr 2fr;
+    margin-bottom: 2.5em;
 }
 
 .book-card-main h2 {
     color: var(--red-color);
     font-family: var(--headline-font);
+    margin: 0;
+}
+
+.book-card-main {
+    padding: 9px 20px 20px 20px;
+}
+
+.book-card-review-details {
+    justify-items: right;
+    line-height: 10px;
+    border-right: 2px solid #bbb;
+    padding: 20px;
+}
+
+time {
+    font-size: 1.2em;
 }
