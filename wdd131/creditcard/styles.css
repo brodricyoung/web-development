@@ -1,0 +1,115 @@
+
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin: 6em auto;
+    grid-template-rows: 50px 240px 50px 37px;
+    width: 450px;
+}
+
+form > div {
+    background-color: #ddd;
+    width: 350px;
+    border-radius: 7px;
+}
+
+input {
+    height: 25px;
+    font-size: 16px;
+    margin: 2px 0;
+}
+
+#cardfront {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    margin: auto 0;    
+}
+
+img {
+    justify-self: right;
+    margin: 0;
+    padding: 0;
+}
+
+#cardnumcontainer {
+    grid-column: 1/3;
+}
+
+#cardnumber {
+    width: 97%;
+}
+
+#cardholdercontainer {
+    grid-column: 1/2;
+}
+
+#cardholder {
+    width: 103%;
+}
+
+#expirationcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: none;
+    margin: 0;
+    padding: 0;
+    justify-self: right;
+}
+
+#expmonth {
+    width: 35px;
+}
+
+#expyear {
+    margin-left: 4px;
+    width: 35px;
+}
+
+#cardback {
+    grid-column: 2/4;
+    grid-row: 2/4;
+    margin: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#magneticstrip {
+    height: 50px;
+    width: 370px;
+    grid-column: 1/3;
+    background-color: #333;
+
+}
+
+#cvc-cvv-container {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-top: 40%;
+}
+
+button {
+    grid-column: 3/4;
+    grid-row: 4/5;
+    width: 70%;
+    margin: 0 auto;
+    border: 2px solid #555;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.visually-hidden {
+    display: none;
+}
