@@ -46,6 +46,8 @@ function successTemplate(info) {
     form.style.display = "none";
     const summary = document.getElementById("summary");
     summary.innerText = `Thank you ${info.adultName} for registering. You have registered ${info.numberParticipants} participants and owe $${info.totalFee} in Fees.`;
+
+    document.getElementById("iconlink").style.position = "absolute";
 }
 
 function totalFees() {
