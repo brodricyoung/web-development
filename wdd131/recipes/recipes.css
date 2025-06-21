@@ -115,15 +115,21 @@ footer{
     justify-items: center;
     margin: 4em 0 1em 0;
 }
+.social {
+    display: grid;
+    grid-template-columns: 3.5em 3.5em 3.5em;
+    margin-bottom: 0.5em;
+    gap: 10px;
+}
 
 .social img {
-    height: 3.5em;
-    margin-bottom: 0.5em;
+    display: block;
 }
 
 footer > a {
-    color: var(--primary-color);
+    /* color: var(--primary-color); */
     font-size: 15px;
+    display: inline-block;
 }
 
 
@@ -157,6 +163,18 @@ footer > a {
     .description {
         display: inline-block;
         margin-top: 1em;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2em;
+    }
+
+    footer > a {
+        order: -1;
     }
 }
 
