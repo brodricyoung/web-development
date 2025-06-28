@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="images/recipe-book.png" type="image/x-icon">
 
     <link rel="stylesheet" href="recipes.css">
-    <script src="main.js"></script>
+    <script src="main.js" type="module"></script>
 
     <meta property="og:title" content="Recipe Book">
     <meta property="og:type" content="website" />
@@ -32,23 +32,24 @@
     </form>
 
     <main>
-        <div class="recipebox">
-            <img src="images/apple-crisp.jpg" alt="apple crisp">
-            <div class="recipecontent">
-                <div class="tagsbox">
-                    <p>dessert</p>
-                </div>
+        <!-- <figure class="recipebox">
+            <img src="images/apple-crisp.jpg" alt="image of apple crisp on a plate">
+            <figcaption class="recipecontent">
+                <ul class="tagsbox">
+                    <li>Dessert</li>
+                    <li>Fruit</li>
+                </ul>
                 <h2 class="name">Apple Crisp</h2>
                 <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-                    <span class="icon-star">★</span>
-                    <span class="icon-star">★</span>
-                    <span class="icon-star">★</span>
-                    <span class="icon-star">★</span>
-                    <span class="icon-star-empty">☆</span>
+                    <span aria-hidden="true" class="icon-star">★</span>
+                    <span aria-hidden="true" class="icon-star">★</span>
+                    <span aria-hidden="true" class="icon-star">★</span>
+                    <span aria-hidden="true" class="icon-star">★</span>
+                    <span aria-hidden="true" class="icon-star-empty">☆</span>
                 </span>
                 <p class="description">This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream.</p>
-            </div>
-        </div>
+            </figcaption>
+        </figure> -->
 
     </main>
 
