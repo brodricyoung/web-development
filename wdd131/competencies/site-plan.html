@@ -4,14 +4,14 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Site Plan</title>
-		<link type="text/css" rel="stylesheet" href="site-plan.css" />
+		<link type="text/css" rel="stylesheet" href="styles/site-plan.css" />
 	</head>
 
 	<body>
 		<header>
-			<h1>[Site name] Site Plan</h1>
-			<h2>FirstName LastName</h2>
-			<h2>WDD 131-[section]</h2>
+			<h1>DCSD Vital Competencies Site Plan</h1>
+			<h2>Brodric Young</h2>
+			<h2>WDD 131-A1</h2>
 			<!-- In the header above, add the name or your site, your name and class number. For example if you are in section 3 you would put WDD 131.03 -->
 		</header>
 		<main>
@@ -19,22 +19,22 @@
 			<hr />
 			<h2>Overview</h2>
 			<h3>Purpose</h3>
-			<p>[Your purpose here]</p>
+			<p>The purpose of this site is to provide an easy-to-use and secure platform for tracking student progress on vital learning competencies within our local school district. It allows students and parents to view competency completion status in real time, while giving teachers the ability to update and manage records for each student. By organizing this information in a clear, accessible format, the site supports communication between educators, students, and families, helping everyone stay informed and engaged in the learning process.</p>
 			<!-- change this -->
 
 			<h3>Audience</h3>
-			<p>[Your audience here]</p>
+			<p>Students, parents, teachers, and administrators in the school district will be accessing this site to view or update a students vital competencies.</p>
 			<!-- change this -->
 
 			<h3>Dynamic elements</h3>
-			<p>[Describe dynamic elements provided by Javascript here]</p>
+			<p>After logging in through Firebase Authentication, JavaScript will determine the user's role (student, parent, or teacher) and conditionally display the appropriate interface using DOM manipulation. For example, students and parents will see only that student’s competency records, while teachers will have full access to view and update all records. These records will be stored as objects in Firebase Firestore and managed using arrays with methods like filter and forEach to efficiently display data. JavaScript functions will handle tasks such as rendering data, responding to input events, and updating the database, demonstrating clear code organization. Event listeners will be used to handle actions like clicking buttons to mark competencies as complete or incomplete, and elements will be dynamically updated in response. The site will use ES modules to organize code across files and maintain clean structure.</p>
 			<!-- change this -->
 
 			<hr />
 			<h2>Branding</h2>
 			<h3>Website Logo</h3>
 			<!-- Replace this with some sort of logo for your site.  A logo can be as simple as the name of your site in a nice font :) -->
-			<img src="#" alt="Logo image" />
+			<img src="images/DCSD-logo.png" alt="Logo image" />
 			<hr />
 			<h2>Style Guide</h2>
 
@@ -46,9 +46,9 @@
 			<!-- Copy and paste the URL to your finished palette below Make sure to paste it into both spots -->
 			Palette URL:
 			<a
-				href="https://coolors.co/396e94-e7c24f-a43312-381d2a-aabd8c"
+				href="https://coolors.co/15203c-993300-ff8201-ff0101-ffff00"
 				target="_blank"
-				>https://coolors.co/396e94-e7c24f-a43312-381d2a-aabd8c</a
+				>https://coolors.co/15203c-993300-ff8201-ff0101-ffff00</a
 			>
 
 			<table class="colors">
@@ -58,13 +58,15 @@
 						<th>Secondary</th>
 						<th>Accent 1</th>
 						<th>Accent 2</th>
+                        <th>Accent 3</th>
 					</tr>
 					<!-- Replace the numbers in the boxes below with your hex color codes. Then switch to the site-plan.css file and change your colors there as well. -->
 					<tr>
-						<td class="primary">[#396E94]</td>
-						<td class="secondary">[#E7C24F]</td>
-						<td class="accent1">[#A43312]</td>
-						<td class="accent2"></td>
+						<td class="primary">#15203C</td>
+						<td class="secondary">#993300</td>
+						<td class="accent1">#FF8201</td>
+						<td class="accent2">#FF0101</td>
+                        <td class="accent3">#FFFF00</td>
 					</tr>
 				</tbody>
 			</table>
@@ -75,11 +77,11 @@
 			<!-- Choose a font for your paragraphs (body copy) and headlines. What font(s) have you chosen? Why did you choose what you did?  Make sure to review the list of web safe fonts at W3Schools.org as a starting point.  Think also about which of your colors above you might use for background and font colors. -->
 
 			<h4>
-				Heading Font: [Font Name here]
+				Heading Font: Inter
 				<!-- change this -->
 			</h4>
 			<h4>
-				Paragraph Font: [Font Name here]
+				Paragraph Font: Roboto
 				<!-- change this -->
 			</h4>
 			<h3>Normal paragraph example</h3>
@@ -106,35 +108,385 @@
 			<!-- Think about how you want your navigation bar to look. In the site-plan.css file change the colors to your colors to get the look you desire. -->
 			<nav>
 				<a href="#">Home</a>
-				<a href="#">Page2</a>
-				<a href="#">Page3</a>
+				<a href="#">View Vital Competencies</a>
 			</nav>
 			<hr />
 
 			<h2>Content</h2>
-			<h3>Home page</h3>
-			<p>[content, images, data for the home page]</p>
-			<h3>[Page 2]</h3>
-			<p>[content, images, data for the subpage]</p>
+            
+			<h3>Home page</h3> 
+            <p>Duchesne County School District Secondary School Vital Compentencies</p>
+            <p>
+                The purpose of the vital competencies is to help students accomplish the mission of the school district. which is, "Graduates of Duchesne County School District have the knowledge, skills, and dispositions to lead fulfilling lives." Within the Accountability-Based Competency System, these vital competencies allow for the continuation of traditional school with traditional instruction of the core standards, but it also includes the skills and dispositions our young people need so very much. By skills we are talking about critical thinking, collaboration, informed decision making and creativity. By dispositions we mean creativity, hard work, respect, and integrity.
+            </p>
+            <p>
+                Within each competency area (knowledge, skills, dispositions) there will be 2-4 required tasks and 5-7 optional tasks. Obviously, each student will need to complete/pass all of the required tasks. Then, to achieve the distinguished (blue ribbon) status, students will need to complete at least four of the optional tasks as well.
+            </p>
+            <p>
+                Each student will have an adult in the school who is their advocate to help them along through their competency process. This advocate adult will help them understand the requirements, encourage them to do their best, provide guidance and feedback, and can pass off any of the items on the list. Subject area teachers can also pass off items on the list that are within their area.
+            </p>
+            <p>
+                Students are expected to work on all the competencies (required and optional) throughout the school year. Many of the competencies will be worked on naturally through the regular schedule of school. Students may also work on them when there is extension time in class as well as at home. Students are accountable to track their progress with the support of the school advocate and the family.
+            </p>
+            <p>
+                We are excited to roll out a school system that honors such time-tested traits as integrity, respect, hard work, creativity, informed decision making, collaboration, etc! Thank you for partnering with us as we strive to help our students live fulfilling lives!
+            </p>
+            <img src="images/catagory-chart.jpg" alt="Chart of catagories for vital competencies. Knowledge, Skills, and Dispositions." style="border: 2px solid black; width: 400px;">
+
+
+			<h3>View Vital Competencies</h3>
+			<p>DCSD Vital Competencies - 6th Grade</p>
+            <p>Knowledge: <ul>
+                <li>Science</li>
+                <li>Technology</li>
+                <li>Engineering</li>
+                <li>Math</li>
+                <li>Hhumanities</li>
+                <li>American Cit.</li>
+                <li>Healthy Living</li>
+                <li>Communications</li>
+            </ul></p>
+            <ul>
+                <li>Demonstrate competency in reasoning with ratios (61)</li>
+                <li>Demonstrate competency in dividing fractions (62)</li>
+                <li>Demonstrate competency in working with positive and negative numbers (63) Demonstrate competency in solving equations (64)</li>
+                <li>Complete and present on a knowledge extension project Produce at least one original work of art you have created</li>
+                <li>Read a book (minimum of 100 pages or multiple books adding up to 100 pages) Describe one influential event in world history</li>
+                <li>Write a short story with at least 1000 words</li>
+                <li>Explain how to maintain healthy relationships online and in social media</li>
+                <li>Describe what it means to be a good citizen</li>
+            </ul>
+            <img src="images/knowledge.png" alt="open book with lightbulb" style="width: 100px;">
+            <p>Skills:
+                <ul>
+                    <li>Communications</li>
+                    <li>Critical Thinking</li>
+                    <li>Collaboration</li>
+                    <li>Informed Decision</li>
+                    <li>Making</li>
+                    <li>Creativity</li>
+                </ul>
+            </p>
+            <ul>
+                <li>Write a competent argumentative piece of writing (V)</li>
+                <li>Communicate your interpretation of the main idea from a written passage (W)</li>
+                <li>Create a model or engineer a device to demonstrate the structure of a molecule (SC6)</li>
+                <li>Complete and present on a skills extension project</li>
+                <li>Describe something you see as a problem in the world and provide a solution</li>
+                <li> about a time when you had to seek information to make a good decision </li>
+                <li>Give evidence of collaborating with another person to achieve a goal </li>
+                <li>Produce a video or a poster about how to cook something and do laundry</li>
+                <li>Give evidence of how you organized your things so you can be more productive Learn a craft and create something new using that craft</li>
+                <li>Describe how savings accounts and checking accounts work</li>
+            </ul>
+            <img src="images/skills.png" alt="hands with gears" style="width: 100px;">
+            <p>Dispositions:
+                <ul>
+                    <li>Creativity</li>
+                    <li>Hard work</li>
+                    <li>Respect</li>
+                    <li>Integrity</li>
+                </ul>
+            </p>
+            <ul>
+                <li>Describe a time when you demonstrated integrity</li>
+                <li>Collect a statement from a person describing how you have shown them respect ➡ Describe a situation in which you worked hard to reach success</li>
+                <li>Within this school year, provide evidence of creativity</li>
+                <li>Achieve your yearly individual reading goal</li>
+                <li>Complete and present on a dispositions extension project</li>
+                <li>Describe a strategy you use when you need to calm down</li>
+                <li>Provide 2 hours of service to help our community in a beneficial way</li>
+                <li>Describe a time you overcame negative peer pressure</li>
+                <li>In your own words, describe the word discipline</li>
+            </ul>
+            <img src="images/dispositions.png" alt="bright person outline" style="width: 100px;">
+
+			<p>DCSD Vital Competencies - 7th Grade</p>
+            <p>Knowledge: <ul>
+                <li>Science</li>
+                <li>Technology</li>
+                <li>Engineering</li>
+                <li>Math</li>
+                <li>Hhumanities</li>
+                <li>American Cit.</li>
+                <li>Healthy Living</li>
+                <li>Communications</li>
+            </ul></p>
+            <ul>
+                <li>Demonstrate a competent understanding of one aspect of Utah history</li>
+                <li>Competently write an informational essay</li>
+                <li>Competently solve one-step and two-step equations</li>
+                <li>Create a model or engineer a device based on a scientific concept</li>
+                <li>Complete and present on a knowledge extension project</li>
+                <li>Read a book (minimum of 120 pages or multiple books adding up to 120 pages)</li>
+                <li>Present at least one piece of art you have created yourself</li>
+                <li>Tell the story of an influential event in U.S. History</li>
+                <li>Write an informational essay on how to stay safe online</li>
+                <li>Set your own physical workout program and follow it for at least one month Compare and contrast positive and negative body image</li>
+            </ul>
+            <img src="images/knowledge.png" alt="open book with lightbulb" style="width: 100px;">
+            <p>Skills:
+                <ul>
+                    <li>Communications</li>
+                    <li>Critical Thinking</li>
+                    <li>Collaboration</li>
+                    <li>Informed Decision</li>
+                    <li>Making</li>
+                    <li>Creativity</li>
+                </ul>
+            </p>
+            <ul>
+                <li>Communicate your interpretation of the main idea from a written passage</li>
+                <li>Describe something you see as a problem in the world and provide a solution </li>
+                <li>Give evidence of collaborating with another person to achieve a goal </li>
+                <li>Complete and present on a skills extension project</li>
+                <li>Create something new (or create plans for something new)</li>
+                <li>List a possible future career and describe the factors that informed your decision</li>
+                <li>Document participation in at least one extracurricular activity</li>
+                <li>Write about a time when you had to seek information to make a good decision Invent or engineer something useful for your family</li>
+                <li>Describe 5 ways to save money</li>
+                <li>Research an ancestor and present their life history to your family</li>
+            </ul>
+            <img src="images/skills.png" alt="hands with gears" style="width: 100px;">
+            <p>Dispositions:
+                <ul>
+                    <li>Creativity</li>
+                    <li>Hard work</li>
+                    <li>Respect</li>
+                    <li>Integrity</li>
+                </ul>
+            </p>
+            <ul>
+                <li>Describe a time when you demonstrated integrity</li>
+                <li>Collect a statement from a person describing how you have shown them respect Describe a situation in which you worked hard to reach success</li>
+                <li>Within this school year, provide evidence of creativity</li>
+                <li>Achieve your yearly individual reading goal</li>
+                <li>Complete and present on a dispositions extension project</li>
+                <li>Write the story of a time when you could have cheated, but you stayed honest Present something you have created that brought you joy</li>
+                <li>Describe a personal hero and explain the admirable dispositions they have lived by Provide at least 2 hours of service to help our community in a beneficial way</li>
+                <li>Attain the blue level on the attendance matrix for at least 3 terms</li>
+            </ul>
+            <img src="images/dispositions.png" alt="bright person outline" style="width: 100px;">
+
+			<p>DCSD Vital Competencies - 8th Grade</p>
+            <p>Knowledge: <ul>
+                <li>Science</li>
+                <li>Technology</li>
+                <li>Engineering</li>
+                <li>Math</li>
+                <li>Hhumanities</li>
+                <li>American Cit.</li>
+                <li>Healthy Living</li>
+                <li>Communications</li>
+            </ul></p>
+            <ul>
+                <li>Demonstrate a competent understanding of the U.S. Constitution</li>
+                <li>Competently write a persuasive essay</li>
+                <li>Competently graph linear equations</li>
+                <li>Create a model or engineer a device to demonstrate the structure of a molecule Complete and present on a knowledge extension project</li>
+                <li>Produce at least one original work of art you have created</li>
+                <li>Read a book (minimum of 140 pages or multiple books adding up to 140 pages)</li>
+                <li>Write an original poem with at least 16 lines</li>
+                <li>Describe one influential event in U.S. history </li>
+                <li>Write a short story with at least 1,500 words</li>
+                <li>Compare and contrast good eating habits vs. addictions</li>
+            </ul>
+            <img src="images/knowledge.png" alt="open book with lightbulb" style="width: 100px;">
+            <p>Skills:
+                <ul>
+                    <li>Communications</li>
+                    <li>Critical Thinking</li>
+                    <li>Collaboration</li>
+                    <li>Informed Decision</li>
+                    <li>Making</li>
+                    <li>Creativity</li>
+                </ul>
+            </p>
+            <ul>
+                <li>Communicate your interpretation of the main idea from a written passage</li>
+                <li>Describe something you see as a problem in the world and provide a solution</li>
+                <li>Give evidence of collaborating with another person to achieve a goal</li>
+                <li>Complete and present on a skills extension project</li>
+                <li>Describe a time when you worked as a mediator to help two people resolve a conflict</li>
+                <li>Write about a time when you had to seek information to make a good decision</li>
+                <li>Critique a news piece, pointing out the bias or persuasive nature of the piece</li>
+                <li>Take a position on the role of the U.S. in world affairs and defend your position</li>
+                <li>List a possible career option and the steps to take in achieving it</li>
+                <li>Create a plan for a possible new business you could start</li>
+                <li>Produce a video demonstrating how to change a tire, check the oil, and one other vehicle check</li>
+            </ul>
+            <img src="images/skills.png" alt="hands with gears" style="width: 100px;">
+            <p>Dispositions:
+                <ul>
+                    <li>Creativity</li>
+                    <li>Hard work</li>
+                    <li>Respect</li>
+                    <li>Integrity</li>
+                </ul>
+            </p>
+            <ul>
+                <li>Describe a time when you demonstrated integrity</li>
+                <li>Collect a statement from a person describing how you have shown them respect</li>
+                <li>Describe a situation in which you worked hard to reach success</li>
+                <li>Within this school year, provide evidence of creativity</li>
+                <li>Achieve your yearly individual reading goal</li>
+                <li>Complete and present on a dispositions extension project</li>
+                <li>Produce a video that demonstrates the value of integrity</li>
+                <li>Respond to the quote "Hard work beats talent when talent doesn't work hard"</li>
+                <li>Provide 2 hours of service to help our community in a beneficial way</li>
+                <li>Write the story of a time when you were able to help or comfort someone in need</li>
+                <li>Attain the blue level on the attendance matrix for at least 3 terms</li>
+            </ul>
+            <img src="images/dispositions.png" alt="bright person outline" style="width: 100px;">
+
+
+            <p>Example JSON Data:</p>
+            <pre><code>
+                {
+                    "teachers": [
+                        {
+                        "id": "t001",
+                        "name": "Mr. James Carter",
+                        "email": "jcarter@schooldistrict.edu",
+                        "role": "teacher",
+                        "students": ["s001", "s002", "s003", "s004"]
+                        },
+                        {
+                        "id": "t002",
+                        "name": "Ms. Laura Nguyen",
+                        "email": "lnguyen@schooldistrict.edu",
+                        "role": "teacher",
+                        "students": ["s005", "s006", "s007", "s008"]
+                        }
+                    ],
+
+                    "administrators": [
+                        {
+                        "id": "a001",
+                        "name": "Dr. Rachel Kim",
+                        "email": "rkim@schooldistrict.edu",
+                        "role": "admin"
+                        },
+                        {
+                        "id": "a002",
+                        "name": "Mr. Samuel Lopez",
+                        "email": "slopez@schooldistrict.edu",
+                        "role": "admin"
+                        }
+                    ],
+
+                    "students": [
+                        {
+                        "id": "s001",
+                        "name": "Ava Johnson",
+                        "grade": 5,
+                        "email": "ava.johnson@student.schooldistrict.edu",
+                        "parentIds": ["p001"]
+                        },
+                        {
+                        "id": "s002",
+                        "name": "Noah Johnson",
+                        "grade": 3,
+                        "email": "noah.johnson@student.schooldistrict.edu",
+                        "parentIds": ["p001"]
+                        },
+                        {
+                        "id": "s003",
+                        "name": "Olivia Smith",
+                        "grade": 4,
+                        "email": "olivia.smith@student.schooldistrict.edu",
+                        "parentIds": ["p002"]
+                        },
+                        {
+                        "id": "s004",
+                        "name": "Elijah Brown",
+                        "grade": 4,
+                        "email": "elijah.brown@student.schooldistrict.edu",
+                        "parentIds": ["p003"]
+                        },
+                        {
+                        "id": "s005",
+                        "name": "Emma Davis",
+                        "grade": 3,
+                        "email": "emma.davis@student.schooldistrict.edu",
+                        "parentIds": ["p004"]
+                        },
+                        {
+                        "id": "s006",
+                        "name": "Liam Garcia",
+                        "grade": 3,
+                        "email": "liam.garcia@student.schooldistrict.edu",
+                        "parentIds": ["p005"]
+                        },
+                        {
+                        "id": "s007",
+                        "name": "Sophia Martinez",
+                        "grade": 5,
+                        "email": "sophia.martinez@student.schooldistrict.edu",
+                        "parentIds": ["p006"]
+                        },
+                        {
+                        "id": "s008",
+                        "name": "Lucas Martinez",
+                        "grade": 2,
+                        "email": "lucas.martinez@student.schooldistrict.edu",
+                        "parentIds": ["p006"]
+                        }
+                    ],
+
+                    "parents": [
+                        {
+                        "id": "p001",
+                        "name": "Sarah Johnson",
+                        "email": "sarah.johnson@parentmail.com",
+                        "childIds": ["s001", "s002"]
+                        },
+                        {
+                        "id": "p002",
+                        "name": "Emily Smith",
+                        "email": "emily.smith@parentmail.com",
+                        "childIds": ["s003"]
+                        },
+                        {
+                        "id": "p003",
+                        "name": "Michael Brown",
+                        "email": "michael.brown@parentmail.com",
+                        "childIds": ["s004"]
+                        },
+                        {
+                        "id": "p004",
+                        "name": "Jessica Davis",
+                        "email": "jessica.davis@parentmail.com",
+                        "childIds": ["s005"]
+                        },
+                        {
+                        "id": "p005",
+                        "name": "Robert Garcia",
+                        "email": "robert.garcia@parentmail.com",
+                        "childIds": ["s006"]
+                        },
+                        {
+                        "id": "p006",
+                        "name": "Angela Martinez",
+                        "email": "angela.martinez@parentmail.com",
+                        "childIds": ["s007", "s008"]
+                        }
+                    ]
+                }
+
+            </code></pre>
+
+
 			<h2>Wireframes</h2>
-			<p>
-				Create two wireframes for your site. One for each page and list them
-				here
-			</p>
-
 			<h3>Home</h3>
-			<p>
-				[Any additional details about home that the wireframe does not make
-				clear]
-			</p>
-			<img src="#" alt="home page wireframe" />
+			<img src="images/wireframes/home.png" alt="home page wireframe" /> <!-- https://wireframe.cc/Nv7tJv -->
 
-			<h3>[Page 2]</h3>
+			<h3>View Vital Competencies</h3>
 			<p>
-				[Any additional details about page 2 that the wireframe does not make
-				clear]
+				This page will be dynamically reated based on who is signed in. The first is for if a student or parent of only one student is signed in. They can only see the one students information. The second is for if an administrator, teacher, or parent of multiple students is signed in. They will be able to select which student to view from varying lists of students based on their role. Teachers will also be able to edit the competencies as either Complete or Incomplete. Administrators can do the same and also edit what the competency requirement is. 
 			</p>
-			<img src="#" alt="page 2 wireframe" />
+			<img src="images/wireframes/student-view.png" alt="page 2 wireframe, student and parent of one student view" style="margin-bottom: 20px;"/> <!-- https://wireframe.cc/yTSPtU -->
+			<img src="images/wireframes/admin-teacher-view.png" alt="page 3 wireframe, administrator, teacher, and parent of multiple students view" /> <!-- https://wireframe.cc/ljNFzT -->
 		</main>
 	</body>
 </html>
