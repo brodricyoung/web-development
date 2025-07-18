@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duchesne County School District</title>
+    <meta name="description" content="Prototype website for vital competency grades viewing and editing">
+    <meta name="author" content="Brodric Young">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <link rel="shortcut icon" href="images/dcsd-favicon-logo.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <a href="index.html" id="logo">
+            <img src="images/DCSD-icon-only-logo.png" alt="E cubed logo">
+            <span>Duchesne County<br>School District</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="view-competencies.html">View Vital Competencies</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Competencies - ${selectedName} </h1>
+
+        <label for="student-dropdown" class="visually-hidden">Select Student:</label>
+        <select id="student-dropdown" name="student">
+            <option value="" disabled selected>- Select Student -</option>
+            <option value="student1">${studentName}</option>
+            <option value="student2">${studentName}</option>
+            <option value="student3">${studentName}</option>
+        </select>
+
+        <div class="catagory-box">
+            <div class="catagory-name-and-img">
+                <h2>Dispositions</h2>
+                <img src="images/dispositions.png" alt="open book with lightbulb">
+            </div>
+            <div class="competencies-box">
+                <div class="competency">
+                    <label for="signature" class="visually-hidden">Signature:</label>
+                    <input type="text" id="signature" name="signature" placeholder="Type name as signature">
+                    <span class="marker-complete">Complete</span>
+                    <span class="bullet-required">&bull;</span>
+                    <span class="competency-text-required">Demonstrate competency in reasoning with ratios</span>
+                </div>
+                <div class="competency">
+                    <label for="signature" class="visually-hidden">Signature:</label>
+                    <input type="text" id="signature" name="signature" placeholder="Type name as signature">
+                    <span class="marker-incomplete">Incomplete</span>
+                    <span class="bullet-optional">&bull;</span>
+                    <span class="competency-text-optional">Describe what it means to be a good citizen</span>
+                </div>
+            </div>
+            <div class="subjects-box">
+                <ul class="subjects">
+                    <li>Science</li>
+                    <li>Technology</li>
+                    <li>Engineering</li>
+                    <li>Math</li>
+                    <li>Hhumanities</li>
+                    <li>American Cit.</li>
+                    <li>Healthy Living</li>
+                    <li>Communications</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="catagory-box">
+            <div class="catagory-name-and-img">
+                <h2>${catagory}</h2>
+                <img src="images/knowledge.png" alt="open book with lightbulb">
+            </div>
+            <div class="competencies-box">
+                <div class="competency">
+                    <label for="signature" class="visually-hidden">Signature:</label>
+                    <input type="text" id="signature" name="signature" placeholder="Type name as signature">
+                    <span class="marker-complete">Complete</span>
+                    <span class="bullet-required">&bull;</span>
+                    <span class="competency-text-required">Demonstrate competency in reasoning with ratios</span>
+                </div>
+                <div class="competency">
+                    <label for="signature" class="visually-hidden">Signature:</label>
+                    <input type="text" id="signature" name="signature" placeholder="Type name as signature">
+                    <span class="marker-incomplete">Incomplete</span>
+                    <span class="bullet-optional">&bull;</span>
+                    <span class="competency-text-optional">Describe what it means to be a good citizen</span>
+                </div>
+            </div>
+            <div class="subjects-box">
+                <ul class="subjects">
+                    <li>Science</li>
+                    <li>Technology</li>
+                    <li>Engineering</li>
+                    <li>Math</li>
+                    <li>Hhumanities</li>
+                    <li>American Cit.</li>
+                    <li>Healthy Living</li>
+                    <li>Communications</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p id="copyright">&copy; 2025 Brodric Young</p>
+        <p>This is not an official Duchesne County School District site.</p>
+    </footer>
+</body>
+</html>
