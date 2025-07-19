@@ -6,8 +6,11 @@
   --primary-color: #15203C;
   --secondary-color: #993300;
   --accent1-color: #FF8201;
+  --accent1-light: #ff9c36;
   --accent2-color: #FF0101;
+  --accent2-light: #ff3e3e;
   --accent3-color: #FFFF00;
+  --accent3-light: #ffff35;
 
   --heading-font: 'Inter', Helvetica, Arial, sans-serif;
   --paragraph-font: Roboto, Helvetica, Arial, sans-serif;
@@ -110,6 +113,7 @@ h1 {
 #portrait {
     margin: 4em 0;
     color: var(--primary-color);
+    font-family: var(--heading-font);
 }
 #portrait img {
     max-width: 60%;
@@ -117,8 +121,17 @@ h1 {
     margin: 1em auto 0 auto;
 }
 
+#text-content section {
+    margin-bottom: 3em;
+}
+#text-content h2 {
+    color: var(--primary-color);
+    font-family: var(--heading-font);
+}
 #text-content p {
-    margin: 1.5em;
+    margin-top: 0.5rem;
+    padding-bottom: 0.4rem;
+    margin-left: 1.5rem;
     font-size: 1.2em;
 }
 
@@ -127,10 +140,21 @@ h1 {
 /*###############################################################*/
 /************************ competencies ***************************/
 /*###############################################################*/
+#competency-page-title {
+    margin-bottom: 3rem;
+}
+
+#dropdown-and-instructions {
+    display: flex;
+    flex-flow: row wrap;
+}
+#dropdown-and-instructions p {
+    margin: 7px 0 0 3em;
+}
 #student-dropdown {
     width: 30%;
     font-size: 1.3em;
-    margin: 2.5em 0;
+    margin: 0 0 3rem 0;
     border: 3px solid var(--primary-color);
     border-radius: 4px;
 }
@@ -141,32 +165,287 @@ h1 {
 .catagory-box {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: space-between;
     border: 1px solid var(--primary-color);
     margin-bottom: 2em;
     border-radius: 35px;
+}
+.knowledge {
+    background: linear-gradient(to right, var(--accent1-light), white 25%, white 75%, var(--accent1-light));
+}
+.skills {
+    background: linear-gradient(to right, var(--accent2-light), white 25%, white 75%, var(--accent2-light));
+}
+.dispositions {
+    background: linear-gradient(to right, var(--accent3-light), white 25%, white 75%, var(--accent3-light));
 }
 
 .catagory-name-and-img h2 {
     border: 1px solid var(--primary-color);
     padding: 1em;
     border-radius: 30px;
+    color: var(--primary-color);
+    margin-bottom: 16px
 }
 .catagory-name-and-img img {
     display: block;
     max-width: 70%;
-    margin: 1em auto;
+    margin: auto;
     padding: 8px;
-    border: 1px solid black;
     background-color: white;
     border-radius: 3px;
 }
+.catagory-name-and-img {
+    border-radius: 35px;
+    display: flex;
+    flex-flow: column nowrap;
+    padding-bottom: 1em;
+}
 
+.competencies-box {
+    margin: 10px;
+}
+.required {
+    border-top: 2px solid black;
+    padding: 5px 0;
+    margin-bottom: 5px;
+    border-bottom: 2px solid black;
+}
+.required p {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--accent1-color);
+    margin-bottom: 1em;
+}
+.optional p {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 1em;
+}
+.competency {
+    margin: 4px;
+    margin-bottom: 20px;
+}
+.competency input {
+    width: 100px;
+    position: relative;
+    top: -1px;
+    text-align: center;
+}
 
+.marker-complete,
+.marker-incomplete {
+    display: inline-block;
+    width: 85px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.marker-complete {
+    background-color: #6ae66a;
+}
+.marker-incomplete {
+    background-color: #ed4343;
+    cursor: pointer;
+}
 
+.competency-text-required {
+    color: var(--accent1-color);
+    font-weight: bold;
+}
+.competency-text-optional {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
 
-
+.subjects-box {
+    padding: 15px;
+    align-content: center;
+    border-radius: 35px;
+}
 .subjects {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
+    color: var(--primary-color);
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    line-height: 1.5em;
+    /* text-align: center; */
+}
+
+
+/*###############################################################*/
+/*###############################################################*/
+/*###############################################################*/
+@media screen and (max-width:1100px) {
+    /************************ main ***************************/
+    main {
+        margin: 5em 3em;
+    }
+    /************************ competencies ***************************/
+    #student-dropdown{
+        margin-bottom: 1.5rem;
+        width: 40%;
+    }
+    #dropdown-and-instructions p {
+        margin: 0 auto;
+    }
+    #dropdown-and-instructions {
+        margin-bottom: 1rem;
+    }
+
+    .catagory-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .subjects-box {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        display: flex;
+        justify-content: center;
+    }
+    .competencies-box {
+        grid-column: 1/3;
+    }
+    .catagory-name-and-img h2 {
+        grid-column: 1/3;
+        text-align: center;
+    }
+    .catagory-name-and-img {
+        display: contents;
+    }
+
+    .knowledge .competencies-box {
+        background: linear-gradient(to right, var(--accent1-light), white 2%, white 98%, var(--accent1-light));
+        padding: 0 10px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .skills .competencies-box {
+        background: linear-gradient(to right, var(--accent2-light), white 2%, white 98%, var(--accent2-light));
+        padding: 0 10px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .dispositions .competencies-box {
+        background: linear-gradient(to right, var(--accent3-light), white 2%, white 98%, var(--accent3-light));
+        padding: 0 10px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+}
+
+
+/*###############################################################*/
+/*###############################################################*/
+/*###############################################################*/
+@media screen and (max-width:800px) {
+     header {
+        display: block;
+        padding: 0;
+        margin: 1em 0;
+     }
+     #logo {
+        margin: 0 0 1em 1em;
+     }
+     nav {
+        background-color: var(--nav-hover-background-color);
+        display: flex;
+        justify-content: space-evenly;
+    }
+    nav a {
+        color: var(--nav-hover-link-color);
+        justify-self: center;
+    }
+    nav a:hover {
+        color: var(--nav-link-color);
+        background-color: var(--nav-background-color);
+    }
+}
+
+/*###############################################################*/
+/*###############################################################*/
+/*###############################################################*/
+@media screen and (max-width:600px) {
+    /************************ header ***************************/
+    #logo img {
+        height: 48px;
+    }
+    #logo span {
+        font-size: 1.2em;
+    }
+    nav a {
+        font-size: 1.1em;
+    }
+    /************************ main ***************************/
+    main {
+        margin: 3em 1em;
+    }
+    /************************ page titles ***************************/
+    h1 {
+        font-size: 1.5em;
+    }
+    /*#######################################################*/
+    /************************ home ***************************/
+    /*#######################################################*/
+    #portrait img {
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    #text-content p {
+        font-size: 1em;
+    }
+
+    /*###############################################################*/
+    /************************ competencies ***************************/
+    /*###############################################################*/
+    #student-dropdown {
+        width: 75%;
+        font-size: 1.1em;
+    }
+
+    .competency {
+        display: grid;
+        grid-template-columns: 100px 85px 1fr;
+        column-gap: 4px;
+    }
+    .competency-text-required {
+        grid-column: 1/4;
+        grid-row: 2/3;
+    }
+    .competency-text-optional {
+        grid-column: 1/4;
+        grid-row: 2/3;
+    }
+
+    .knowledge .competencies-box {
+        background: linear-gradient(to right, var(--accent1-light), white 3%, white 97%, var(--accent1-light));
+    }
+    .skills .competencies-box {
+        background: linear-gradient(to right, var(--accent2-light), white 3%, white 97%, var(--accent2-light));
+    }
+    .dispositions .competencies-box {
+        background: linear-gradient(to right, var(--accent3-light), white 3%, white 97%, var(--accent3-light));
+    }
+
+    .knowledge {
+        background: linear-gradient(to right, var(--accent1-light), #fbe6d1 50%, var(--accent1-light));
+    }
+    .skills {
+        background: linear-gradient(to right, var(--accent2-light), #fbc4c4 50%, var(--accent2-light));
+    }
+    .dispositions {
+        background: linear-gradient(to right, var(--accent3-light), #ffffc1 50%, var(--accent3-light));
+    }
 }

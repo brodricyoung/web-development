@@ -24,35 +24,126 @@
     </header>
 
     <main>
-        <h1>Competencies - ${selectedName} </h1>
+        <h1 id="competency-page-title">Competencies: ${selectedName} </h1>
 
-        <label for="student-dropdown" class="visually-hidden">Select Student:</label>
-        <select id="student-dropdown" name="student">
-            <option value="" disabled selected>- Select Student -</option>
-            <option value="student1">${studentName}</option>
-            <option value="student2">${studentName}</option>
-            <option value="student3">${studentName}</option>
-        </select>
+        <div id="dropdown-and-instructions">
+            <label for="student-dropdown" class="visually-hidden">Select Student:</label>
+            <select id="student-dropdown" name="student">
+                <option value="" disabled selected>- Select Student -</option>
+                <option value="student1">${studentName}</option>
+                <option value="student2">${studentName}</option>
+                <option value="student3">${studentName}</option>
+            </select>
+            <p>To pass off competency, type signiture then click "Incomplete" button.</p>
+        </div>
 
-        <div class="catagory-box">
+        <div class="catagory-box dispositions">
             <div class="catagory-name-and-img">
                 <h2>Dispositions</h2>
                 <img src="images/dispositions.png" alt="open book with lightbulb">
             </div>
             <div class="competencies-box">
-                <div class="competency">
-                    <label for="signature" class="visually-hidden">Signature:</label>
-                    <input type="text" id="signature" name="signature" placeholder="Type name as signature">
-                    <span class="marker-complete">Complete</span>
-                    <span class="bullet-required">&bull;</span>
-                    <span class="competency-text-required">Demonstrate competency in reasoning with ratios</span>
+                <div class="required">
+                    <p>Required:</p>
+                    <div class="competency">
+                        <label for="signature1" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature1" name="signature1" placeholder="Signature">
+                        <button class="marker-complete">Complete</button>
+                        <span class="competency-text-required">&bull; Demonstrate competency in reasoning with ratios</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature1" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature1" name="signature1" placeholder="Signature">
+                        <button class="marker-complete">Complete</button>
+                        <span class="competency-text-required">&bull; Demonstrate competency in reasoning with ratios</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature1" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature1" name="signature1" placeholder="Signature">
+                        <button class="marker-complete">Complete</button>
+                        <span class="competency-text-required">&bull; Demonstrate competency in reasoning with ratios</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature1" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature1" name="signature1" placeholder="Signature">
+                        <button class="marker-complete">Complete</button>
+                        <span class="competency-text-required">&bull; Demonstrate competency in reasoning with ratios</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature1" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature1" name="signature1" placeholder="Signature">
+                        <button class="marker-complete">Complete</button>
+                        <span class="competency-text-required">&bull; Demonstrate competency in reasoning with ratios</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature1" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature1" name="signature1" placeholder="Signature">
+                        <button class="marker-complete">Complete</button>
+                        <span class="competency-text-required">&bull; Demonstrate competency in reasoning with ratios</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature1" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature1" name="signature1" placeholder="Signature">
+                        <button class="marker-complete">Complete</button>
+                        <span class="competency-text-required">&bull; Demonstrate competency in reasoning with ratios</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature1" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature1" name="signature1" placeholder="Signature">
+                        <button class="marker-complete">Complete</button>
+                        <span class="competency-text-required">&bull; Demonstrate competency in reasoning with ratios</span>
+                    </div>
                 </div>
-                <div class="competency">
-                    <label for="signature" class="visually-hidden">Signature:</label>
-                    <input type="text" id="signature" name="signature" placeholder="Type name as signature">
-                    <span class="marker-incomplete">Incomplete</span>
-                    <span class="bullet-optional">&bull;</span>
-                    <span class="competency-text-optional">Describe what it means to be a good citizen</span>
+                <div class="optional">
+                    <p>Optional:</p>
+                    <div class="competency">
+                        <label for="signature2" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature2" name="signature2" placeholder="Signature">
+                        <button class="marker-incomplete">Incomplete</button>
+                        <span class="competency-text-optional">&bull; Describe what it means to be a good citizen</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature2" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature2" name="signature2" placeholder="Signature">
+                        <button class="marker-incomplete">Incomplete</button>
+                        <span class="competency-text-optional">&bull; Describe what it means to be a good citizen</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature2" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature2" name="signature2" placeholder="Signature">
+                        <button class="marker-incomplete">Incomplete</button>
+                        <span class="competency-text-optional">&bull; Describe what it means to be a good citizen</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature2" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature2" name="signature2" placeholder="Signature">
+                        <button class="marker-incomplete">Incomplete</button>
+                        <span class="competency-text-optional">&bull; Describe what it means to be a good citizen</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature2" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature2" name="signature2" placeholder="Signature">
+                        <button class="marker-incomplete">Incomplete</button>
+                        <span class="competency-text-optional">&bull; Describe what it means to be a good citizen</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature2" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature2" name="signature2" placeholder="Signature">
+                        <button class="marker-incomplete">Incomplete</button>
+                        <span class="competency-text-optional">&bull; Describe what it means to be a good citizen</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature2" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature2" name="signature2" placeholder="Signature">
+                        <button class="marker-incomplete">Incomplete</button>
+                        <span class="competency-text-optional">&bull; Describe what it means to be a good citizen</span>
+                    </div>
+                    <div class="competency">
+                        <label for="signature2" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature2" name="signature2" placeholder="Signature">
+                        <button class="marker-incomplete">Incomplete</button>
+                        <span class="competency-text-optional">&bull; Describe what it means to be a good citizen</span>
+                    </div>
                 </div>
             </div>
             <div class="subjects-box">
@@ -61,7 +152,7 @@
                     <li>Technology</li>
                     <li>Engineering</li>
                     <li>Math</li>
-                    <li>Hhumanities</li>
+                    <li>Humanities</li>
                     <li>American Cit.</li>
                     <li>Healthy Living</li>
                     <li>Communications</li>
@@ -69,25 +160,29 @@
             </div>
         </div>
 
-        <div class="catagory-box">
+        <div class="catagory-box skills">
             <div class="catagory-name-and-img">
                 <h2>${catagory}</h2>
                 <img src="images/knowledge.png" alt="open book with lightbulb">
             </div>
             <div class="competencies-box">
-                <div class="competency">
-                    <label for="signature" class="visually-hidden">Signature:</label>
-                    <input type="text" id="signature" name="signature" placeholder="Type name as signature">
-                    <span class="marker-complete">Complete</span>
-                    <span class="bullet-required">&bull;</span>
-                    <span class="competency-text-required">Demonstrate competency in reasoning with ratios</span>
+                <div class="required">
+                    <p>Required:</p>
+                    <div class="competency">
+                        <label for="signature" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature" name="signature" placeholder="Signature">
+                        <button class="marker-complete">Complete</button>
+                        <span class="competency-text-required">&bull; Demonstrate competency in reasoning with ratios</span>
+                    </div>
                 </div>
-                <div class="competency">
-                    <label for="signature" class="visually-hidden">Signature:</label>
-                    <input type="text" id="signature" name="signature" placeholder="Type name as signature">
-                    <span class="marker-incomplete">Incomplete</span>
-                    <span class="bullet-optional">&bull;</span>
-                    <span class="competency-text-optional">Describe what it means to be a good citizen</span>
+                <div class="optional">
+                    <p>Optional:</p>
+                    <div class="competency">
+                        <label for="signature" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature" name="signature" placeholder="Signature">
+                        <button class="marker-incomplete">Incomplete</button>
+                        <span class="competency-text-optional">&bull; Describe what it means to be a good citizen</span>
+                    </div>
                 </div>
             </div>
             <div class="subjects-box">
@@ -96,7 +191,45 @@
                     <li>Technology</li>
                     <li>Engineering</li>
                     <li>Math</li>
-                    <li>Hhumanities</li>
+                    <li>Humanities</li>
+                    <li>American Cit.</li>
+                    <li>Healthy Living</li>
+                    <li>Communications</li>
+                </ul>
+            </div>
+        </div>
+        <div class="catagory-box knowledge">
+            <div class="catagory-name-and-img">
+                <h2>${catagory}</h2>
+                <img src="images/knowledge.png" alt="open book with lightbulb">
+            </div>
+            <div class="competencies-box">
+                <div class="required">
+                    <p>Required:</p>
+                    <div class="competency">
+                        <label for="signature" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature" name="signature" placeholder="Signature">
+                        <button class="marker-complete">Complete</button>
+                        <span class="competency-text-required">&bull; Demonstrate competency in reasoning with ratios</span>
+                    </div>
+                </div>
+                <div class="optional">
+                    <p>Optional:</p>
+                    <div class="competency">
+                        <label for="signature" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature" name="signature" placeholder="Signature">
+                        <button class="marker-incomplete">Incomplete</button>
+                        <span class="competency-text-optional">&bull; Describe what it means to be a good citizen</span>
+                    </div>
+                </div>
+            </div>
+            <div class="subjects-box">
+                <ul class="subjects">
+                    <li>Science</li>
+                    <li>Technology</li>
+                    <li>Engineering</li>
+                    <li>Math</li>
+                    <li>Humanities</li>
                     <li>American Cit.</li>
                     <li>Healthy Living</li>
                     <li>Communications</li>
