@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duchesne County School District</title>
+    <meta name="description" content="Prototype website for vital competency grades viewing and editing">
+    <meta name="author" content="Brodric Young">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/dcsd-favicon-logo.jpg" type="image/x-icon">
+
+    <!-- Firebase App (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+    <!-- Firebase Auth (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
+    <!-- Firebase Firestore (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js" defer></script>
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="home.html" id="logo">
+            <img src="images/DCSD-icon-only-logo.png" alt="E cubed logo">
+            <span>Duchesne County<br>School District</span>
+        </a>
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="view-competencies.html">View Vital Competencies</a>
+            <button id="logout-btn" onclick="logout()">Logout</button>
+            <a href="index.html" id="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Secondary School Vital Compentencies</h1>
+        <div id="portrait">
+            <h2>DCSD Vital Competencies Are Rooted in Our Portrait of a Graduate:</h2>
+            <img src="images/catagory-chart.jpg" alt="Chart of catagories for vital competencies which are Knowledge, Skills, and Dispositions.">
+        </div>
+        <div id="text-content">
+            <section>
+                <h2>Purpose</h2>
+                <p>
+                    The purpose of the vital competencies is to help students accomplish the mission of the school district which is, "Graduates of Duchesne County School District have the knowledge, skills, and dispositions to lead a happy, successful life." Within the Accountability-Based Competency System, these vital competencies allow for the continuation of traditional school with traditional instruction of the core standards, but it also includes the skills and dispositions our young people need so very much. By skills we are talking about critical thinking, collaboration, informed decision making and creativity. By dispositions we mean creativity, hard work, respect, and integrity.
+                </p>
+            </section>
+            <section>
+                <h2>Tasks</h2>
+                <p>
+                    Within each competency area (knowledge, skills, dispositions) there will be 2-4 required tasks and 5-7 optional tasks. Obviously, each student will need to complete/pass all of the required tasks. Then, to achieve the distinguished (blue ribbon) status, students will need to complete at least four of the optional tasks as well.
+                </p>
+            </section>
+            <section>
+                <h2>Advocate</h2>
+                <p>
+                    Each student will have an adult in the school who is their advocate to help them along through their competency process. This advocate adult will help them understand the requirements, encourage them to do their best, provide guidance and feedback, and can pass off any of the items on the list. Subject area teachers can also pass off items on the list that are within their area.
+                </p>
+                <p>
+                    Students are expected to work on all the competencies (required and optional) throughout the school year. Many of the competencies will be worked on naturally through the regular schedule of school. Students may also work on them when there is extension time in class as well as at home. Students are accountable to track their progress with the support of the school advocate and the family.
+                </p>
+            </section>
+            <section>
+                <h2>Traits</h2>
+                <p>
+                    We are excited to roll out a school system that honors such time-tested traits as integrity, respect, hard work, creativity, informed decision making, collaboration, etc! Thank you for partnering with us as we strive to help our students live fulfilling lives!
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p id="copyright">&copy; 2025 Brodric Young</p>
+        <p>This is not an official Duchesne County School District site.</p>
+    </footer>
+</body>
+</html>

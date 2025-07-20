@@ -7,24 +7,46 @@
     <meta name="description" content="Prototype website for vital competency grades viewing and editing">
     <meta name="author" content="Brodric Young">
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
     <link rel="shortcut icon" href="images/dcsd-favicon-logo.jpg" type="image/x-icon">
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            auth.onAuthStateChanged((user) => {
+            if (!user) {
+                window.location.href = "index.html"; // redirect if not logged in
+            }
+            });
+        });
+    </script>
+
+    <!-- Firebase App (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+    <!-- Firebase Auth (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
+    <!-- Firebase Firestore (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js" defer></script>
+    <script src="main.js" defer></script>
+
+
 </head>
 <body>
     <header>
-        <a href="index.html" id="logo">
+        <a href="home.html" id="logo">
             <img src="images/DCSD-icon-only-logo.png" alt="E cubed logo">
             <span>Duchesne County<br>School District</span>
         </a>
 
         <nav>
-            <a href="index.html">Home</a>
+            <a href="home.html">Home</a>
             <a href="view-competencies.html">View Vital Competencies</a>
+            <button id="logout-btn" onclick="logout()">Logout</button>
+            <button id="login-btn" onclick="login()">Login</button>
         </nav>
     </header>
 
-    <main>
-        <h1 id="competency-page-title">Competencies: ${selectedName} </h1>
+    <main id="dynamically-update">
+        <!-- <h1 id="competency-page-title">Competencies: ${selectedName} </h1>
 
         <div id="dropdown-and-instructions">
             <label for="student-dropdown" class="visually-hidden">Select Student:</label>
@@ -187,18 +209,14 @@
             </div>
             <div class="subjects-box">
                 <ul class="subjects">
-                    <li>Science</li>
-                    <li>Technology</li>
-                    <li>Engineering</li>
-                    <li>Math</li>
-                    <li>Humanities</li>
-                    <li>American Cit.</li>
-                    <li>Healthy Living</li>
-                    <li>Communications</li>
+                    <li>Creativity</li>
+                    <li>Hard work</li>
+                    <li>Respect</li>
+                    <li>Integrity</li>
                 </ul>
             </div>
         </div>
-        <div class="catagory-box knowledge">
+        <div class="catagory-box knowledge"> 
             <div class="catagory-name-and-img">
                 <h2>${catagory}</h2>
                 <img src="images/knowledge.png" alt="open book with lightbulb">
@@ -222,7 +240,10 @@
                         <span class="competency-text-optional">&bull; Describe what it means to be a good citizen</span>
                     </div>
                 </div>
-            </div>
+            </div> 
+
+
+
             <div class="subjects-box">
                 <ul class="subjects">
                     <li>Science</li>
@@ -235,7 +256,7 @@
                     <li>Communications</li>
                 </ul>
             </div>
-        </div>
+        </div> -->
     </main>
 
     <footer>
