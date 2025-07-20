@@ -68,50 +68,119 @@ auth.onAuthStateChanged(async (user) => {
   // SWITCH BASED ON ROLE
   switch (role) {
     case "teacher":
-      // TODO: Show teacher dashboard or options
-      break;
     case "admin":
-      // TODO: Show admin interface
-      break;
+        // populate dropdown with whatever students teachers have or all for admins
+        await getDropdownViewUnselected(data.id);
+        break;
     case "parent":
-      // TODO: If more than one child, show selection screen
-      // if (data.childIds.length > 1) { ... }
-      // else {
-      //     getSingleStudentView(data, user.uid)
-      // }
-      break;
+        if (data.childIds.length > 1) { 
+            // parent of more than one student
+            await getDropdownViewUnselected(data.id);
+        }
+        else {
+            // parent of one student
+            const studentLoginId = await getUidFromInternalId(data.childIds[0]);
+            const studentData = await getUserDataByUid(studentLoginId);
+            await getSingleStudentView(studentData, studentLoginId);
+        }
+        break;
     case "student":
-      // Automatically show student view
-      await getSingleStudentView(data, user.uid);
-      break;
+        // Automatically show student view
+        await getSingleStudentView(data, user.uid);
+        break;
   }
 });
 
+
 // ===================================================
-// LOAD COMPETENCIES FOR ONE STUDENT
+// GET PAGE STARTED WITH DROPDOWN MENU, NO STUDENT SELECTED YET
 // ===================================================
-async function getSingleStudentView(studentData, userId) {
-  const competencyData = await getCompetencyStatus(userId); // Pull from Firestore
-  const categoryBoxes = getCategoryBoxesHTML(competencyData); // Build UI HTML
+async function getDropdownViewUnselected(internalId) {  // userId = firestore login id of viewer (parent, teacher, admin)
+    let html = `<h1 id="competency-page-title">Competencies</h1>
+                <div id="dropdown-and-instructions">
+                    <label for="student-dropdown" class="visually-hidden">Select Student:</label>
+                    <select id="student-dropdown" name="student">
+                        <option value="" disabled selected>- Select Student -</option>`;
+    switch (internalId[0]) {
+        case "a":
+            const studentsIds = await getAllStudentIds();
+            for (const student of studentsIds) {
+                const studentUid = await getUidFromInternalId(student);
+                const studentData = await getUserDataByUid(studentUid);
+                html += `<option value="${studentUid}">${studentData.name}</option>`;
+            };
+            html += `</select>
+                    <p>To pass off competency, type signiture then click "Incomplete" button.</p>
+                </div>`;
+            break;
+        case "t":
+            const teacherUid = await getUidFromInternalId(internalId);
+            const teacherData = await getUserDataByUid(teacherUid);
+            for (const student of teacherData.students) {
+                const studentUid = await getUidFromInternalId(student);
+                const studentData = await getUserDataByUid(studentUid);
+                html += `<option value="${studentUid}">${studentData.name}</option>`;
+            };
+            html += `</select>
+                    <p>To pass off competency, type signiture then click "Incomplete" button.</p>
+                </div>`;
+            break;
+        case "p":
+            const parentLoginId = await getUidFromInternalId(internalId);
+            const parentData = await getUserDataByUid(parentLoginId);
+            for (const child of parentData.childIds) {
+                const childUid = await getUidFromInternalId(child);
+                const childData = await getUserDataByUid(childUid);
+                html += `<option value="${childUid}">${childData.name}</option>`;
+            };
+            html += `</select>
+                </div>`;
+            break;
+    }
+    html += `<div id="category-boxes-container"></div>`
+    // insert title and populated dropdown menu
+    document.getElementById("dynamically-update").innerHTML = html;
+    // add event listener to newly created dropdown menu to update page on student selection
+    document.getElementById("student-dropdown").addEventListener("change", getStudentViewWithSelectedDropdown);
+}
 
-  console.log("Boxes");
-  console.log(categoryBoxes);
 
-  // Inject generated HTML into the page
-  let html = `<h1 id="competency-page-title">Competencies: ${studentData.name}</h1>`;
-  html += categoryBoxes;
+// ===================================================
+// FETCH COMPETENCIES AND INSERT BELOW DROPDOWN
+// ===================================================
+async function getStudentViewWithSelectedDropdown(event) {
+    const uid = event.target.value;
 
-  const mainElement = document.getElementById("dynamically-update");
-  mainElement.innerHTML = html;
+    // Get data and HTML
+    const competencyData = await getCompetencyStatus(uid);
+    const categoryBoxes = getCategoryBoxesHTML(competencyData);
+
+    const categoryBoxesContainer = document.getElementById("category-boxes-container");
+    // erase any previous students information and replace with current selected student competencies
+    categoryBoxesContainer.innerHTML = categoryBoxes;
+}
+
+
+// ===================================================
+// LOAD COMPETENCIES HTML FOR ONE STUDENT VIEW
+// ===================================================
+async function getSingleStudentView(studentData, userId) {  // userId = firestore login id
+    const competencyData = await getCompetencyStatus(userId); // Pull from Firestore
+    const categoryBoxes = getCategoryBoxesHTML(competencyData); // Build UI HTML
+
+    // Inject generated HTML into the page
+    let html = `<h1 id="competency-page-title">Competencies: ${studentData.name}</h1>`;
+    html += categoryBoxes;
+
+    const mainElement = document.getElementById("dynamically-update");
+    mainElement.innerHTML = html;
 }
 
 // ===================================================
 // BUILD HTML FOR COMPETENCY BOXES
 // ===================================================
 function getCategoryBoxesHTML(competencyData) {
-  console.log("Received competencyData:", competencyData);
   let html = ``;
-
   // Loop through each major category: knowledge, skills, dispositions
   for (const category in competencyData) {
     const competencies = competencyData[category];
@@ -214,8 +283,6 @@ async function getCompetencyStatus(userId) {
   }
 
   const data = docSnap.data();
-  console.log("Competencies found:", data);
-
   // Data looks like:
   // {
   //   knowledge: [ { requirement, text, status, signedBy }, ... ],
@@ -240,3 +307,114 @@ async function saveCompetencyStatus(studentId, competencyKey, status, signature)
     }, { merge: true });
 }
 */
+// ===================================================
+// GET LOGIN UID FROM GENERIC ID
+// ===================================================
+/*
+ * Retrieves the Firebase Authentication UID (login ID) for a given internal ID (students, parents, teachers, admins).
+ *
+ * Parameters:
+ *   - internalId (string): The internal user ID (e.g., "s001", "p002", "t005", "a010")
+ *
+ * Returns:
+ *   - (string|null): The UID corresponding to the internalId, or null if not found
+ *
+ * This function searches the 'users' collection for a document with a field
+ * 'id' that matches the given value, then returns the document ID (which is the UID).
+ */
+async function getUidFromInternalId(internalId) {
+  try {
+    // Query the 'users' collection where the 'id' field matches the provided internalId
+    const snapshot = await db.collection("users")
+      .where("id", "==", internalId)
+      .limit(1)
+      .get();
+
+    // If no matching documents were found, log a warning and return null
+    if (snapshot.empty) {
+      console.warn(`No user found with id: ${internalId}`);
+      return null;
+    }
+
+    // Get the first document from the query result
+    const userDoc = snapshot.docs[0];
+
+    // The document ID is the Firebase Authentication UID
+    const loginUid = userDoc.id;
+
+    // Return the UID
+    return loginUid;
+
+  } catch (error) {
+    // Log and return null if there's an error during the query
+    console.error("Error getting UID from internalId:", error);
+    return null;
+  }
+}
+
+
+// ===================================================
+// GET USER DATA BY UID
+// ===================================================
+/*
+ * Fetches all data fields of a user from Firestore given their UID.
+ * Works for students, parents, teachers, admins — any user.
+ * 
+ * Parameters:
+ *   - uid (string): The Firebase Authentication UID for the user.
+ * 
+ * Returns:
+ *   - (object|null): Returns an object containing the user's data fields if found, or null if no user exists or on error.
+ */
+async function getUserDataByUid(uid) {
+  try {
+    // Reference the document in the 'users' collection by the user's UID
+    const docRef = db.collection("users").doc(uid);
+    
+    // Attempt to fetch the document snapshot
+    const docSnap = await docRef.get();
+
+    // Check if the document exists
+    if (!docSnap.exists) {
+      // Log a warning if no user document was found for the given UID
+      console.warn(`No user found with UID: ${uid}`);
+      return null; // Return null if no user found
+    }
+
+    // Return the data object containing all the user's fields
+    return docSnap.data();
+
+  } catch (error) {
+    // Log any error that occurs during the fetch process
+    console.error("Error getting user data:", error);
+    return null; // Return null on error
+  }
+}
+
+// ===================================================
+// GETS ALL STUDENT IDS (s001, s002 ...) IN THE DATABASE
+// ===================================================
+async function getAllStudentIds() {
+  try {
+    const snapshot = await db.collection("users")
+      .where("role", "==", "student")
+      .get();
+
+    if (snapshot.empty) {
+      console.log("No students found.");
+      return [];
+    }
+
+    // Extract and return the student internal IDs (field 'id') or UIDs (doc IDs)
+    const studentIds = snapshot.docs.map(doc => {
+      const data = doc.data();
+      return data.id; // or doc.id for login UID if you want that
+    });
+
+    return studentIds;
+
+  } catch (error) {
+    console.error("Error getting all student IDs:", error);
+    return [];
+  }
+}
