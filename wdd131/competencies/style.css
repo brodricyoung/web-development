@@ -155,15 +155,16 @@ h1 {
 
 #temporary-testing {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 60px 1fr;
     width: 40%;
     column-gap: 20px;
     margin-top: 2em;
 }
 #temporary-testing h3,
-#note {
-    grid-column: 1/4;
+#password-box {
+    grid-column: 1/3;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 #temporary-testing .heading {
     font-weight: bold;
@@ -484,6 +485,10 @@ h1 {
         font-size: 1.1em;
     }
 
+    #temporary-testing {
+        width: 100%;
+    }
+
     /*#######################################################*/
     /************************ home ***************************/
     /*#######################################################*/
@@ -553,6 +558,23 @@ h1 {
         justify-self: right;
         margin: 3px;
         padding: 7px;
+    }
+
+    #temporary-testing {
+        display: flex;
+        flex-flow: column nowrap;
+        font-size: 0.9em;
+        margin-top: 50px;
+    }
+    .heading {
+        display: none;
+    }
+    .role {
+        font-weight: bold;
+    }
+    .email {
+        text-indent: 1.5em;
+        margin-bottom: 10px;
     }
 }
 
