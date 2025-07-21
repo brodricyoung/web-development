@@ -7,17 +7,36 @@
 async function login() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+  const errorDisplay = document.getElementById("login-error");
+  const loginHeading = document.getElementById("login-heading");
 
   try {
     const cred = await auth.signInWithEmailAndPassword(email, password);
     console.log("User logged in:", cred.user);
-    
-    // Redirect user to home page after login
+
+    // Clear any error and redirect
+    errorDisplay.style.display = "none";
+    errorDisplay.textContent = "";
+    loginHeading.style.marginBottom = "10px";
     window.location.href = "home.html";
   } catch (err) {
     console.error("Login failed:", err.message);
+
+    // Show the error to the user
+    loginHeading.style.margin = "0";
+    errorDisplay.style.display = "block";
+    if (err.code === "auth/user-not-found") {
+      errorDisplay.textContent = "No account found with this email.";
+    } else if (err.code === "auth/invalid-login-credentials") {
+      errorDisplay.textContent = "Invalid login credentials.";
+    } else if (err.code === "auth/invalid-email") {
+      errorDisplay.textContent = "Invalid email format.";
+    } else {
+      errorDisplay.textContent = "Login failed. Please try again.";
+    }
   }
 }
+
 
 // Handles logout and returns user to home page
 async function logout() {
@@ -38,6 +57,7 @@ async function logout() {
 // ===================================================
 // AUTH STATE LISTENER — Runs when auth state changes
 // ===================================================
+let currentUserRole = null;
 auth.onAuthStateChanged(async (user) => {
   const loginBtn = document.getElementById("login-btn");
   const logoutBtn = document.getElementById("logout-btn");
@@ -63,10 +83,10 @@ auth.onAuthStateChanged(async (user) => {
   }
 
   const data = docSnap.data();
-  const role = data.role;
+  currentUserRole = data.role;
 
   // SWITCH BASED ON ROLE
-  switch (role) {
+  switch (currentUserRole) {
     case "teacher":
     case "admin":
         // populate dropdown with whatever students teachers have or all for admins
@@ -110,7 +130,7 @@ async function getDropdownViewUnselected(internalId) {  // userId = firestore lo
                 html += `<option value="${studentUid}">${studentData.name}</option>`;
             };
             html += `</select>
-                    <p>To pass off competency, type signiture then click "Incomplete" button.</p>
+                    <p>To pass off competency, type signature then click "Incomplete" button.</p>
                 </div>`;
             break;
         case "t":
@@ -122,7 +142,7 @@ async function getDropdownViewUnselected(internalId) {  // userId = firestore lo
                 html += `<option value="${studentUid}">${studentData.name}</option>`;
             };
             html += `</select>
-                    <p>To pass off competency, type signiture then click "Incomplete" button.</p>
+                    <p>To pass off competency, type signature then click "Incomplete" button.</p>
                 </div>`;
             break;
         case "p":
@@ -196,17 +216,26 @@ function getCategoryBoxesHTML(competencyData) {
           <p>Required:</p>`;
 
     // Render required competencies
-    competencies.forEach(competency => {
-      if (competency.requirement === "required") {
-        let signedBy = competency.signedBy !== "" ? competency.signedBy : "Signature";
-        html += `
-          <div class="competency">
-            <label for="signature" class="visually-hidden">Signature:</label>
-            <input type="text" id="signature" name="signature" placeholder="${signedBy}">
-            <button class="marker-${competency.status}">${competency.status}</button>
-            <span class="competency-text-required">&bull; ${competency.text}</span>
-          </div>`;
-      }
+    competencies.forEach((competency, index) => {
+        if (competency.requirement === "required") {
+            if (competency.signedBy) {
+                html += `
+                    <div class="competency">
+                        <p class="signed">${competency.signedBy}</p>
+                        <button class="marker-${competency.status}" data-category="${category}" data-index="${index}">${competency.status}</button>
+                        <span class="competency-text-required">&bull; ${competency.text}</span>
+                    </div>`;
+            }
+            else {
+                html += `
+                    <div class="competency">
+                        <label for="signature${index}-${category}" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature${index}-${category}" name="signature${index}-${category}" placeholder="Signature">
+                        <button class="marker-${competency.status}" data-category="${category}" data-index="${index}">${competency.status}</button>
+                        <span class="competency-text-required">&bull; ${competency.text}</span>
+                    </div>`;
+            }
+        }
     });
 
     // Render optional competencies
@@ -214,16 +243,25 @@ function getCategoryBoxesHTML(competencyData) {
         </div>
         <div class="optional">
           <p>Optional:</p>`;
-    competencies.forEach(competency => {
+    competencies.forEach((competency, index) => {
       if (competency.requirement === "optional") {
-        let signedBy = competency.signedBy !== "" ? competency.signedBy : "Signature";
-        html += `
-          <div class="competency">
-            <label for="signature" class="visually-hidden">Signature:</label>
-            <input type="text" id="signature" name="signature" placeholder="${signedBy}">
-            <button class="marker-${competency.status}">${competency.status}</button>
-            <span class="competency-text-optional">&bull; ${competency.text}</span>
-          </div>`;
+        if (competency.signedBy) {
+                html += `
+                    <div class="competency">
+                        <p class="signed">${competency.signedBy}</p>
+                        <button class="marker-${competency.status}" data-category="${category}" data-index="${index}">${competency.status}</button>
+                        <span class="competency-text-optional">&bull; ${competency.text}</span>
+                    </div>`;
+            }
+            else {
+                html += `
+                    <div class="competency">
+                        <label for="signature${index}-${category}" class="visually-hidden">Signature:</label>
+                        <input type="text" id="signature${index}-${category}" name="signature${index}-${category}" placeholder="Signature">
+                        <button class="marker-${competency.status}" data-category="${category}" data-index="${index}">${competency.status}</button>
+                        <span class="competency-text-optional">&bull; ${competency.text}</span>
+                    </div>`;
+            }
       }
     });
 
@@ -292,21 +330,9 @@ async function getCompetencyStatus(userId) {
   return data;
 }
 
-// ===================================================
-// SAVE COMPETENCY STATUS (will implement later)
-// ===================================================
-/*
-async function saveCompetencyStatus(studentId, competencyKey, status, signature) {
-  await db.collection("students")
-    .doc(studentId)
-    .collection("competencies")
-    .doc(competencyKey)
-    .set({
-      status: status,
-      signedBy: signature
-    }, { merge: true });
-}
-*/
+
+
+
 // ===================================================
 // GET LOGIN UID FROM GENERIC ID
 // ===================================================
@@ -416,5 +442,90 @@ async function getAllStudentIds() {
   } catch (error) {
     console.error("Error getting all student IDs:", error);
     return [];
+  }
+}
+
+
+// Listen for all clicks on marker buttons
+document.addEventListener("click", async (e) => {
+  const btn = e.target;
+
+  // Only act if the button has a class like "marker-complete" or "marker-incomplete"
+  if (btn.tagName === "BUTTON" && btn.className.includes("marker-")) {
+    // Block students or parents from signing off competencies
+    if (currentUserRole !== "teacher" && currentUserRole !== "admin") {
+      alert("Only teachers and admins can pass off competencies.");
+      return;
+    }
+
+    // get competency information
+    const category = btn.dataset.category;
+    const index = parseInt(btn.dataset.index);
+    // Get the signature input right before the button
+    const input = btn.previousElementSibling;
+    const signature = input.value.trim();
+    // get the currently selected students Uid from the dropdown value
+    const selectedStudentUid = document.getElementById("student-dropdown").value;
+
+    if (!signature) {
+      alert("Please enter a signature before marking the competency.");
+      return;
+    }
+
+    const status = "complete";
+    const success = await saveCompetencyStatusForStudent(
+      selectedStudentUid,
+      category,
+      index,
+      status,
+      signature
+    );
+
+    if (success) {
+      btn.className = "marker-complete";
+      btn.textContent = "complete";
+    }
+  }
+});
+
+// ===================================================
+// SAVE COMPETENCY STATUS FOR A STUDENT
+// ===================================================
+/**
+ * Updates the status and signature of a specific competency for a given student.
+ *
+ * @param {string} studentUid - The Firestore document ID (Auth UID) of the student.
+ * @param {string} category - The category of the competency (e.g., "knowledge", "skills", "dispositions").
+ * @param {number} index - The index of the competency in that category's array.
+ * @param {string} status - The new status to assign (e.g., "complete").
+ * @param {string} signedBy - The name or signature of the person passing it off.
+ *
+ * @returns {boolean} - Returns true if successful, false if an error occurred.
+ */
+async function saveCompetencyStatusForStudent(studentUid, category, index, status, signedBy) {
+  try {
+    // Reference to the full competencies document
+    const docRef = db.collection("users").doc(studentUid).collection("competencies").doc("all");
+
+    const docSnap = await docRef.get();
+
+    if (!docSnap.exists) {
+      console.warn(`No competency document found for student UID: ${studentUid}`);
+      return false;
+    }
+
+    const data = docSnap.data();
+
+    // Update the specific competency
+    data[category][index].status = status;
+    data[category][index].signedBy = signedBy;
+
+    // Save back the entire competencies document with updated array
+    await docRef.set(data, { merge: true });
+
+    return true;
+  } catch (error) {
+    console.error("Error saving competency status:", error);
+    return false;
   }
 }

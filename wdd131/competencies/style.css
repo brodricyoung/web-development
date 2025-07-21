@@ -128,7 +128,7 @@ h1 {
     padding: 3em 4em;
 }
 #login-box h2 {
-    margin-bottom: 1em;
+    margin-bottom: 10px;
 }
 #login-box input {
     font-size: 1.3em;
@@ -287,14 +287,24 @@ h1 {
 }
 .competency {
     margin: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    height: fit-content;
 }
-.competency input {
-    width: 125px;
+.competency input,
+.competency .signed {
+    width: 150px;
     position: relative;
     top: -1px;
     text-align: center;
 }
+.competency .signed {
+    display: inline-block;
+    color: var(--primary-color);
+    border: 1px solid #808080;
+    border-radius: 2px;
+    margin: 0;
+}
+
 
 .marker-complete,
 .marker-incomplete {
@@ -499,7 +509,7 @@ h1 {
 
     .competency {
         display: grid;
-        grid-template-columns: 125px 85px 1fr;
+        grid-template-columns: 150px 85px 1fr;
         column-gap: 4px;
     }
     .competency-text-required {
@@ -543,5 +553,13 @@ h1 {
         justify-self: right;
         margin: 3px;
         padding: 7px;
+    }
+}
+
+@media screen and (max-width:335px) {
+    .competency {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 3px;
     }
 }
