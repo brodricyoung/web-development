@@ -32,3 +32,124 @@ h6 {
   margin: 0;
   font-size: 1.5em;
 }
+
+/* Main container */
+
+:root {
+  --grey: #343436;
+}
+
+.codepen {
+  display: grid;
+  grid-template-rows: auto 1fr 1fr auto;
+  height: 100vh;
+  color: white;
+}
+
+.codepen > * {
+  border: 1px solid black;
+}
+
+/* Code editor area */
+
+.code {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #1b2b34;
+}
+
+.editor {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+/* Editor header */
+
+.editor__header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Code input section */
+
+.editor__code {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.editor__number {
+  padding: 0 10px;
+  display: block;
+}
+
+.editor__input {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: grey;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+/* Top bar */
+
+.pen {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 10px;
+  background: black;
+  padding: 10px;
+  border-bottom: 5px solid var(--grey);
+  color: white;
+}
+
+/* Preview window */
+
+.preview {
+  display: grid;
+}
+
+/* Buttons */
+
+.button {
+  background-color: var(--grey);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  position: relative;
+}
+
+.button--small {
+  padding: 4px;
+  font-size: 12px;
+}
+
+/* Yellow "dirty" indicator */
+
+.button--dirty::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(100% - 6px);
+  height: 2px;
+  background: #ffc600;
+}
+
+/* Bottom settings bar */
+
+.settings {
+  background: black;
+  padding: 5px;
+  border-top: 1px solid grey;
+}
+
+
