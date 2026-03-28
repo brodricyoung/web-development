@@ -1,0 +1,129 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@0,-15..0,300..1000,0..1,0..1,0..1&display=swap');
+
+:root {
+  --font-base: 'Recursive', sans-serif;
+  --text-color: #222;
+  --bg-color: #fafafa;
+  --alert-bg: #eaeaea;
+  
+  --font-body: "MONO" 0, "CASL" 0, "wght" 400;
+  --font-bold: "MONO" 0, "CASL" 0, "wght" 700;
+  --font-heading: "MONO" 0, "CASL" 0, "wght" 850;
+  --font-code: "MONO" 1, "CASL" 0, "wght" 500;
+  --font-alert: "MONO" 0, "CASL" 0, "wght" 400, "slnt" -5; /* Slight slant/italic for alert text */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-base);
+  font-variation-settings: var(--font-body);
+  font-size: 1.125rem; /* 18px base */
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+}
+
+.textbook-page {
+  max-width: 70ch; 
+  width: 100%;
+}
+
+h2 {
+  font-variation-settings: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+strong {
+  font-variation-settings: var(--font-bold);
+}
+
+code {
+  font-family: var(--font-base);
+  font-variation-settings: var(--font-code);
+  background-color: rgba(0,0,0,0.05);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.exam-alert {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--alert-bg);
+  padding: 1.25rem;
+  margin: 2rem 0;
+  border-radius: 4px;
+  border-left: 6px solid #888;
+}
+
+.exam-alert p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-variation-settings: var(--font-alert);
+}
+
+.alert-badge {
+  flex-shrink: 0;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 2px dashed #666; /* Mimicking the inner seal ring */
+  box-shadow: 0 0 0 4px var(--alert-bg), 0 0 0 5px #999; /* Outer ring */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+  color: #333;
+}
+
+.badge-top, .badge-bottom {
+  font-variation-settings: var(--font-heading);
+  font-size: 0.8rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.badge-top {
+  margin-bottom: 2px;
+}
+
+.linux-tips {
+  list-style-type: none; 
+  padding-left: 1.5rem;
+}
+
+.linux-tips li {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.linux-tips li::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-variation-settings: var(--font-bold);
+  font-size: 1rem;
+  color: #444;
+}
